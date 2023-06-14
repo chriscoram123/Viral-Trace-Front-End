@@ -7,6 +7,7 @@ Project Description:
 Introducing Viral-Trace, the ultimate mobile application designed to provide users with real-time, comprehensive, and global medical information at their fingertips. Viral-Trace is the go-to app for individuals seeking reliable and up-to-date healthcare knowledge, ensuring they stay informed about the latest medical breakthroughs, diseases, treatments, and health guidelines.
 
 UX/UI Designer - Christopher S Coram
+
 Front End Developer - Christopher S Coram
 
 
