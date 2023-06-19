@@ -10,5 +10,4 @@ UX/UI Designer - Christopher S Coram
 
 Front End Developer - Christopher S Coram
 
-
-Links:
+![Artboard – 2 1](https://github.com/chriscoram123/Viral-Trace-Front-End/assets/36040531/20e49a22-6b1a-4b67-8c0d-10dc68424720)
