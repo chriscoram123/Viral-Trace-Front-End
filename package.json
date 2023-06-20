@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/chriscoram123/Viral-Trace-Front-End/issues"
   },
-  "homepage": "https://github.com/chriscoram123/Viral-Trace-Front-End#readme"
+  "homepage": "https://github.com/chriscoram123/Viral-Trace-Front-End#readme",
+  "dependencies": {
+    "expo": "^48.0.19"
+  }
 }
