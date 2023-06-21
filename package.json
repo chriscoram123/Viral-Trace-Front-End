@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/chriscoram123/Viral-Trace-Front-End#readme",
   "dependencies": {
-    "expo": "^48.0.19"
+    "expo": "^48.0.19",
+    "react-native": "^0.71.3"
   }
 }
