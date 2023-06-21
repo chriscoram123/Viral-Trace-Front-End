@@ -1,5 +1,5 @@
 # Viral-Trace-Front-End
-<img width="494" alt="Screenshot 2023-06-10 at 11 02 12 AM" src="https://github.com/chriscoram123/Viral-Trace-Front-End/assets/36040531/d85ca57d-f37c-45b9-9115-3b518995c114">
+<img width="372" alt="Screenshot 2023-06-21 at 5 08 04 PM" src="https://github.com/chriscoram123/Viral-Trace-Front-End/assets/36040531/c74d86db-619f-43a6-8413-1f68bbec80f8">
 
 
 Project Description:
