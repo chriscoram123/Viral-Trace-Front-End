@@ -5,8 +5,8 @@
 
 ViralTrace is a cutting-edge mobile application designed to provide people with easy and reliable access to global health updates. With its main priority centered around ensuring the well-being of its users, ViralTrace delivers real-time and high-quality information related to various health issues, including viral outbreaks, pandemics, and emerging diseases.
 
-![Artboard – 2 1](https://github.com/chriscoram123/Viral-Trace-Front-End/assets/36040531/977dc6b0-f89f-4c14-a7c3-317207bf0e2f)
-
-
 Developer - Christopher S Coram
 UX/UI Designer - Christopher S Coram
+
+
+![Artboard – 2 1](https://github.com/chriscoram123/Viral-Trace-Front-End/assets/36040531/fe9a9f67-6441-41d0-ac4c-5318a777b0c5)
