@@ -1,10 +1,15 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function Login() {
   return (
     <View style={styles.pageBackground}>
+      <LinearGradient
+        colors={['#1D2443','#38428B']}
+        style={styles.pageBackground}
+      >
       {/* Header */}
         <View style={styles.headerContainer}>
 
@@ -13,7 +18,7 @@ export default function Login() {
               source={require('./assets/HeaderIcon.png')}
             ></Image>
           </View>
-
+          
           <Text style={styles.headerText}>Proceed with</Text><Text style={styles.headerText}>LOGIN</Text>
         </View>
 
@@ -55,19 +60,22 @@ export default function Login() {
 
       {/* Google & Facebook Login */}
         <View style={styles.socialButtonsContainer}>
-            <View style={styles.googleLink}>
+            <View style={styles.googleLinkContainer}>
               <Button 
                 title="Learn More"
+                style={styles.googleLink}
               />
             </View>
 
-            <View  style={styles.facebookLink}>
+            <View  style={styles.facebookLinkContainer}>
               <Button 
                 title="Learn More"
+                style={styles.facebookLink}
               />
             </View>
         </View>
-  </View>
+    </LinearGradient>
+    </View>
   )
 }
 
@@ -79,8 +87,7 @@ const styles = StyleSheet.create({
       flex: 1,
     },
     headerContainer: {
-        backgroundColor: "blue",
-        marginVertical: 50,
+      marginVertical: 60,
     },
     inputContainer: {
 
@@ -91,6 +98,12 @@ const styles = StyleSheet.create({
     },
     loginButtonContainer: {
       marginVertical: 50,
+    },
+    googleLinkContainer: {
+      marginVertical: 10,
+    },
+    facebookLinkContainer: {
+      marginVertical: 10,
     },
 
   // Input Fields
@@ -120,7 +133,7 @@ const styles = StyleSheet.create({
 
   // Text
     headerText: {
-      color: 'black',
+      color: 'white',
       textAlign: "center",
       fontSize: 25,
     },
