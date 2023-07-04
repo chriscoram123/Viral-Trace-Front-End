@@ -1,64 +1,65 @@
 import React from 'react';
 import {StyleSheet, Text, View } from 'react-native';
 
-function Login() {
-    <View>
-        /* Header */
-        <View style={styles.headerContainer}>
-
-          <Text>Proceed with</Text><Text>LOGIN</Text>
-        </View>
-
-        /* Input Fields */
-        <View style={styles.inputContainer}>
-
-            <View style={styles.emailField}>
-
-            </View>
-
-            <View style={styles.passwordField}>
-
-            </View>
-        </View>
-
-        /* Login Options */
+export default function Login() {
+    return (
         <View>
+            /* Header */
+            <View style={styles.headerContainer}>
 
-            <View style={styles.loginButton}>
+            <Text style={styles.headerText}>Proceed with</Text><Text>LOGIN</Text>
+            </View>
+
+            /* Input Fields */
+            <View style={styles.inputContainer}>
+
+                <View style={styles.emailField}>
+
+                </View>
+
+                <View style={styles.passwordField}>
+
+                </View>
+            </View>
+
+            /* Login Options */
+            <View>
+
+                <View style={styles.loginButton}>
+
+                </View>
+
+                <View style={styles.forgotLink}>
+
+                </View>
+
+                <View style={styles.newUserLink}>
+
+                </View>
 
             </View>
 
-            <View style={styles.forgotLink}>
+
+            /* Google & Facebook Login */
+            <View>
+
+                <View style={styles.googleLink}>
+
+                </View>
+
+                <View  style={styles.facebookLink}>
+
+                </View>
 
             </View>
-
-            <View style={styles.newUserLink}>
-
-            </View>
-
         </View>
-
-
-        /* Google & Facebook Login */
-        <View>
-
-            <View style={styles.googleLink}>
-
-            </View>
-
-            <View  style={styles.facebookLink}>
-
-            </View>
-
-        </View>
-    </View>
-
+    )
 }
 
 const styles = StyleSheet.create({
     // Containers
     headerContainer: {
-
+        backgroundColor: "black",
     },
     inputContainer: {
 
@@ -83,4 +84,8 @@ const styles = StyleSheet.create({
 
     },
 
+    // Text
+    headerText: {
+        color: 'black',
+    },
 });
