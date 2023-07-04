@@ -51,11 +51,17 @@ export default function Login() {
         </View>
 
       {/* Login Options */}
-        <View style={styles.loginButtonContainer}>
-            <View style={styles.loginButton}>
-              <Button 
-                title="Learn More"
-              />
+        <View style={styles.loginButtonsContainer}>
+            <View style={styles.loginCon}>
+              {/* <LinearGradient
+                colors={['#B7D0FF', 'B7B7FF']}
+              > */}
+                <Button 
+                  title="Login"
+                  style={styles.loginBg}
+                  color='#181F37'
+                />
+              {/* </LinearGradient> */}
             </View>
 
             <View style={styles.forgotLink}>
@@ -105,15 +111,22 @@ const styles = StyleSheet.create({
     socialButtonsContainer: {
       backgroundColor: "violet",
       marginVertical: 0,
+      marginHorizontal: 10,
+      flexDirection: 'row',
+      justifyContent: 'center',
     },
-    loginButtonContainer: {
+    loginButtonsContainer: {
       marginVertical: 50,
     },
     googleLinkContainer: {
       marginVertical: 10,
+      marginHorizontal: 20,
+      backgroundColor: "red",
     },
     facebookLinkContainer: {
       marginVertical: 10,
+      marginHorizontal: 20,
+      backgroundColor: "red",
     },
     textContainer: {
       marginVertical: 20,
@@ -123,6 +136,12 @@ const styles = StyleSheet.create({
       justifyContent: "center",
       position: "relative",
       top: 40,
+    },
+    loginCon: {
+      backgroundColor: "#B7D0FF",
+      marginHorizontal: 130,
+      height: 40,
+      borderRadius: 20,
     },
 
   // Input Fields
@@ -153,7 +172,10 @@ const styles = StyleSheet.create({
 
   // Buttons & Links
     loginButton: {
-
+      backgroundColor: 'white',
+    },
+    loginBg: {
+      backgroundColor: 'white',
     },
     forgotLink: {
 
