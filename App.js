@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
 
 export default function Login() {
   return (
@@ -36,10 +36,11 @@ export default function Login() {
         </View>
 
       {/* Login Options */}
-        <View>
-
+        <View style={styles.loginButtonContainer}>
             <View style={styles.loginButton}>
-
+              <Button 
+                title="Learn More"
+              />
             </View>
 
             <View style={styles.forgotLink}>
@@ -53,16 +54,18 @@ export default function Login() {
         </View>
 
       {/* Google & Facebook Login */}
-        <View>
-
+        <View style={styles.socialButtonsContainer}>
             <View style={styles.googleLink}>
-
+              <Button 
+                title="Learn More"
+              />
             </View>
 
             <View  style={styles.facebookLink}>
-
+              <Button 
+                title="Learn More"
+              />
             </View>
-
         </View>
   </View>
   )
@@ -81,6 +84,13 @@ const styles = StyleSheet.create({
     },
     inputContainer: {
 
+    },
+    socialButtonsContainer: {
+      backgroundColor: "violet",
+      marginVertical: 50,
+    },
+    loginButtonContainer: {
+      marginVertical: 50,
     },
 
   // Input Fields
