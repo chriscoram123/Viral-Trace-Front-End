@@ -19,7 +19,9 @@ export default function Login() {
             ></Image>
           </View>
           
-          <Text style={styles.headerText}>Proceed with</Text><Text style={styles.headerText}>LOGIN</Text>
+          <View style={styles.textContainer}>
+            <Text style={styles.headerText}>Proceed with</Text><Text style={styles.headerTextTwo}> LOGIN</Text>
+          </View>
         </View>
 
       {/* Input Fields */}
@@ -30,12 +32,20 @@ export default function Login() {
               <TextInput
                 style={styles.textField}
               />
+              <Image
+                source={require('./assets/DividerLine.png')}
+                style={styles.dividerLine}
+              />
             </View>
 
             <View style={styles.passwordField}>
               <Text style={styles.passwordFieldTitle}> Password </Text>
               <TextInput
                 style={styles.textField}
+              />
+              <Image
+                source={require('./assets/DividerLine.png')}
+                style={styles.dividerLine}
               />
             </View>
         </View>
@@ -90,11 +100,11 @@ const styles = StyleSheet.create({
       marginVertical: 60,
     },
     inputContainer: {
-
+      // backgroundColor: "red",
     },
     socialButtonsContainer: {
       backgroundColor: "violet",
-      marginVertical: 50,
+      marginVertical: 0,
     },
     loginButtonContainer: {
       marginVertical: 50,
@@ -105,19 +115,40 @@ const styles = StyleSheet.create({
     facebookLinkContainer: {
       marginVertical: 10,
     },
+    textContainer: {
+      marginVertical: 20,
+      paddingVertical: 0,
+      // backgroundColor: "green",
+      flexDirection: "row",
+      justifyContent: "center",
+      position: "relative",
+      top: 40,
+    },
 
   // Input Fields
     emailFieldTitle: {
       marginLeft: 15, 
+      marginBottom: 5,
+      fontSize: 18,
+      color: 'white',
+      letterSpacing: 2,
     },
     passwordFieldTitle: {
       marginLeft: 15, 
+      marginBottom: 5,
+      fontSize: 18,
+      color: 'white',
+      letterSpacing: 2,
     },
     emailField: {
       marginVertical: 10,
     },
     passwordField: {
       marginVertical: 10,
+    },
+    dividerLine: {
+      marginLeft: 20,
+      marginTop: 8,
     },
 
   // Buttons & Links
@@ -136,10 +167,20 @@ const styles = StyleSheet.create({
       color: 'white',
       textAlign: "center",
       fontSize: 25,
+      letterSpacing: 2,
+    },
+    headerTextTwo: {
+      color: 'white',
+      textAlign: "center",
+      fontSize: 25,
+      letterSpacing: 2,
+      fontWeight: 'bold',
     },
     textField: {
-      backgroundColor: 'green',
+      backgroundColor: 'rgba(0,0,0,0.2)',
       marginHorizontal: 20,
+      borderRadius: 10,
+      height: 35,
     },
 
   // Images
