@@ -58,36 +58,45 @@ export default function Login() {
               > */}
                 <Button 
                   title="Login"
-                  style={styles.loginBg}
-                  color='#181F37'
+                  color='white'
                 />
               {/* </LinearGradient> */}
             </View>
+            
+            <View style={styles.supportContainer}>
+              <View style={styles.forgotLink}>
+                <Button 
+                  title="Forgot?"
+                />
+              </View>
 
-            <View style={styles.forgotLink}>
-
-            </View>
-
-            <View style={styles.newUserLink}>
-
+              <View style={styles.newUserLink}>
+                <Button 
+                  title="New User?"
+                />
+              </View>
             </View>
 
         </View>
 
       {/* Google & Facebook Login */}
+      <Text style={styles.footerText}>Also Login With</Text>
+
         <View style={styles.socialButtonsContainer}>
             <View style={styles.googleLinkContainer}>
-              <Button 
-                title="Learn More"
+              {/* <Button 
+                title="Forgot?"
                 style={styles.googleLink}
-              />
+              /> */}
+                <Image source={require('./assets/GoogleBtn.png')} />
             </View>
 
             <View  style={styles.facebookLinkContainer}>
-              <Button 
-                title="Learn More"
+              {/* <Button 
+                title="New User?"
                 style={styles.facebookLink}
-              />
+              /> */}
+                <Image source={require('./assets/FacebookBtn.png')} />
             </View>
         </View>
     </LinearGradient>
@@ -109,24 +118,30 @@ const styles = StyleSheet.create({
       // backgroundColor: "red",
     },
     socialButtonsContainer: {
-      backgroundColor: "violet",
-      marginVertical: 0,
-      marginHorizontal: 10,
+      marginVertical: 20,
+      // marginHorizontal: 10,
       flexDirection: 'row',
       justifyContent: 'center',
     },
     loginButtonsContainer: {
-      marginVertical: 50,
+      marginTop: 50,
+      marginBottom: 30,
     },
     googleLinkContainer: {
       marginVertical: 10,
-      marginHorizontal: 20,
-      backgroundColor: "red",
+      marginHorizontal: 40,
+      // backgroundColor: "#4D5C98",
+      height: 60,
+      maxWidth: 100,
+      // borderRadius: 20,
     },
     facebookLinkContainer: {
       marginVertical: 10,
-      marginHorizontal: 20,
-      backgroundColor: "red",
+      marginHorizontal: 40,
+      // backgroundColor: "#4D5C98",
+      height: 60,
+      maxWidth: 100,
+      // borderRadius: 100,
     },
     textContainer: {
       marginVertical: 20,
@@ -138,22 +153,27 @@ const styles = StyleSheet.create({
       top: 40,
     },
     loginCon: {
-      backgroundColor: "#B7D0FF",
+      backgroundColor: "#4D5C98",
       marginHorizontal: 130,
       height: 40,
       borderRadius: 20,
+    },
+    supportContainer: {
+      flexDirection: "row",
+      justifyContent: "center",
+      marginVertical: 15,
     },
 
   // Input Fields
     emailFieldTitle: {
       marginLeft: 15, 
       marginBottom: 5,
-      fontSize: 18,
+      fontSize: 16,
       color: 'white',
       letterSpacing: 2,
     },
     passwordFieldTitle: {
-      marginLeft: 15, 
+      marginLeft: 16, 
       marginBottom: 5,
       fontSize: 18,
       color: 'white',
@@ -174,14 +194,11 @@ const styles = StyleSheet.create({
     loginButton: {
       backgroundColor: 'white',
     },
-    loginBg: {
-      backgroundColor: 'white',
-    },
     forgotLink: {
-
+      marginHorizontal: 35,
     },
     newUserLink: {
-
+      marginHorizontal: 20,
     },
 
   // Text
@@ -203,6 +220,18 @@ const styles = StyleSheet.create({
       marginHorizontal: 20,
       borderRadius: 10,
       height: 35,
+    },
+    footerText: {
+      fontSize: 18,
+      color: 'white',
+      textAlign: "center",      
+      letterSpacing: 2,
+    },
+    googleLink: {
+
+    },
+    facebookLink: {
+
     },
 
   // Images
