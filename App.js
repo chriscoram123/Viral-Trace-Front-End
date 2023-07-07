@@ -219,7 +219,7 @@ const styles = StyleSheet.create({
       backgroundColor: 'rgba(0,0,0,0.2)',
       marginHorizontal: 20,
       borderRadius: 10,
-      height: 35,
+      height: 40,
     },
     footerText: {
       fontSize: 18,

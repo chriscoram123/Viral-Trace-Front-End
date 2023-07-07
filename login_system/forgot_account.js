@@ -13,7 +13,8 @@ export default function ForgotAccount() {
                 {/* Header */}
                 <View style={styles.headerContainer}>
                     <Text style={styles.headerTitle}>Forgot Account?</Text>
-                    <Text style={styles.subHeaderTitle}>Choose any one of the following to recover your account</Text>
+                    <Text style={styles.subHeaderTitle}>Choose any one of the following to recover</Text>
+                    <Text style={styles.subHeaderTitleTwo}>your account.</Text>
                 </View>
 
 
@@ -35,20 +36,24 @@ export default function ForgotAccount() {
                     <View style={styles.emailAddressField}>
                         <Text style={styles.emailAddressTitle}>Email Address</Text>
                         <TextInput style={styles.textField} />
-                        <Image
-                            source={require('../assets/DividerLine.png')}
-                            style={styles.dividerLine}
-                        />
+                            <View style={styles.imgContainer}>
+                                <Image
+                                    source={require('../assets/DividerLine.png')}
+                                    style={styles.dividerLine}
+                                />
+                            </View>
                     </View>
 
                     {/* Phone Number */}
                     <View style={styles.phoneNumberField}>
                         <Text style={styles.phoneNumberTitle}>Phone Number</Text>
                         <TextInput style={styles.textField} />
-                        <Image
-                            source={require('../assets/DividerLine.png')}
-                            style={styles.dividerLine}
-                        />
+                            <View style={styles.imgContainer}>
+                                <Image
+                                    source={require('../assets/DividerLine.png')}
+                                    style={styles.dividerLine}
+                                />
+                            </View>
                     </View>
                 </View>
 
@@ -71,9 +76,10 @@ export default function ForgotAccount() {
                 </View>
 
                 {/* Footer Content */}
-                <View>
-                    <View>
-                        <Text> Still having trouble? Get in touch with our customer support for more information</Text>
+                <View style={styles.footerCon}>
+                    <View style={styles.footerTextCon}>
+                        <Text style={styles.footerText}> Still having trouble? Get in touch with our customer </Text>
+                        <Text style={styles.footerText}> support for more information </Text>
                     </View>
 
                     <View style={styles.needHelpCon}>
@@ -109,29 +115,34 @@ const styles = StyleSheet.create({
             marginVertical: 10,
         },
         imgContainer: {
-            alignSelf: 'center',
+            // alignSelf: 'center',
         },
         headerContainer: {
-            marginVertical: 60,
+            marginTop: 100,
+            marginBottom: 50,
             alignSelf: 'center',
-            backgroundColor: 'green',
+            // backgroundColor: 'green',
+        },
+        footerTextCon: {
+            alignSelf: 'center',
+            marginVertical: 10,
         },
 
     // Input Fields
         userNameField: {
-            marginVertical: 10,
+            marginVertical: 15,
         },
         emailAddressField: {
-            marginVertical: 10,
+            marginVertical: 15,
         },
         phoneNumberField: {
-            marginVertical: 10,
+            marginVertical: 15,
         },
         textField: {
             backgroundColor: 'rgba(0,0,0,0.2)',
             marginHorizontal: 20,
             borderRadius: 10,
-            height: 35,
+            height: 40,
         },
         dividerLine: {
             marginLeft: 20,
@@ -142,38 +153,55 @@ const styles = StyleSheet.create({
         headerTitle: {
             color: 'white',
             alignSelf: 'center',
+            fontSize: 30,
+            paddingBottom: 12,
+            letterSpacing: 2,
         },
         subHeaderTitle: {
             color: 'white',
             alignSelf: 'center',
+            fontSize: 15,
+            paddingVertical: 5,
+            letterSpacing: 1,
+        },
+        subHeaderTitleTwo: {
+            color: 'white',
+            alignSelf: 'center',
+            fontSize: 15,
+            letterSpacing: 1,
         },
         userNameTitle: {
-            marginLeft: 15, 
+            marginLeft: 20, 
             marginBottom: 5,
-            fontSize: 16,
+            fontSize: 15,
             color: 'white',
             letterSpacing: 2,
         },
         emailAddressTitle: {
-            marginLeft: 15, 
+            marginLeft: 20, 
             marginBottom: 5,
-            fontSize: 16,
+            fontSize: 15,
             color: 'white',
             letterSpacing: 2,
         },
         phoneNumberTitle: {
-            marginLeft: 15, 
+            marginLeft: 20, 
             marginBottom: 5,
-            fontSize: 16,
+            fontSize: 15,
             color: 'white',
             letterSpacing: 2,
+        },
+        footerText: {
+            color: 'white',
+            paddingVertical: 5,
+            alignSelf: 'center',
         },
 
     // Buttons
         loginButtonsContainer: {
             justifyContent: 'center',
             flexDirection: 'row',
-            marginVertical: 30,
+            marginVertical: 40,
         },
         cancelCon: {
             backgroundColor: "#4D5C98",
@@ -188,5 +216,13 @@ const styles = StyleSheet.create({
             maxHeight: 40,
             borderRadius: 20,
         },
+        needHelpCon: {
+            backgroundColor: "#4D5C98",
+            marginHorizontal: 130,
+            marginVertical: 35,
+            height: 40,
+            borderRadius: 20,
+        },
+        
 
 });
