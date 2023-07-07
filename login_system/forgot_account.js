@@ -12,7 +12,7 @@ export default function ForgotAccount() {
             >
                 {/* Header */}
                 <View style={styles.headerContainer}>
-                    <Text style={styles.headerTitle}>Forget Account?</Text>
+                    <Text style={styles.headerTitle}>Forgot Account?</Text>
                     <Text style={styles.subHeaderTitle}>Choose any one of the following to recover</Text>
                     <Text style={styles.subHeaderTitleTwo}>your account.</Text>
                 </View>
