@@ -2,6 +2,7 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import Navigator from './routes/loginStack'
 
 export default function Login() {
   return (
