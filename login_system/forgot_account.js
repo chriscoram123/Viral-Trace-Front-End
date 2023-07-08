@@ -206,6 +206,7 @@ const styles = StyleSheet.create({
         cancelCon: {
             backgroundColor: "#4D5C98",
             marginHorizontal: 30,
+            paddingHorizontal: 10,
             maxHeight: 40,
             maxWidth: 100,
             borderRadius: 20,
@@ -215,6 +216,7 @@ const styles = StyleSheet.create({
             marginHorizontal: 30,
             maxHeight: 40,
             borderRadius: 20,
+            paddingHorizontal: 10,
         },
         needHelpCon: {
             backgroundColor: "#4D5C98",

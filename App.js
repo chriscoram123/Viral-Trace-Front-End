@@ -3,8 +3,9 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import Navigator from './routes/loginStack'
+import { NavigationContainer } from '@react-navigation/native';
 
-export default function Login() {
+export default function Login({ navigation }) {
   return (
     <View style={styles.pageBackground}>
       <LinearGradient
@@ -68,6 +69,8 @@ export default function Login() {
               <View style={styles.forgotLink}>
                 <Button 
                   title="Forgot?"
+                  onPress={() => navigation.navigate(ForgotAccount)
+                  }
                 />
               </View>
 
