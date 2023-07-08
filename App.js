@@ -77,6 +77,8 @@ export default function Login({ navigation }) {
               <View style={styles.newUserLink}>
                 <Button 
                   title="New User?"
+                  onPress={() => navigation.navigate(NewAccount)
+                  }
                 />
               </View>
             </View>
