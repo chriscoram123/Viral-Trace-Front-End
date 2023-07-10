@@ -5,10 +5,10 @@ import { LinearGradient } from 'expo-linear-gradient';
 import Navigator from './routes/loginStack'
 import { NavigationContainer } from '@react-navigation/native';
 
-import InputFields from './components/loginInputFields';
-import Header from './components/header';
-import LoginOptions from './components/loginOptions';
-import SocialLogin from './components/socialLogin';
+import InputFields from './components/login_components/loginInputFields';
+import Header from './components/login_components/header';
+import LoginOptions from './components/login_components/loginOptions';
+import SocialLogin from './components/login_components/socialLogin';
 
 export default function Login({ navigation }) {
   return (
@@ -40,14 +40,4 @@ const styles = StyleSheet.create({
     pageBackground: {
       flex: 1,
     },
-    textContainer: {
-      marginVertical: 20,
-      paddingVertical: 0,
-      // backgroundColor: "green",
-      flexDirection: "row",
-      justifyContent: "center",
-      position: "relative",
-      top: 40,
-    },
-
 });

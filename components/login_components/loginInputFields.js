@@ -14,7 +14,7 @@ export default function InputFields() {
                         style={styles.textField}
                     />
                     <Image
-                        source={require('../assets/DividerLine.png')}
+                        source={require('../../assets/DividerLine.png')}
                         style={styles.dividerLine}
                     />
                 </View>
@@ -25,7 +25,7 @@ export default function InputFields() {
                         style={styles.textField}
                     />
                     <Image
-                        source={require('../assets/DividerLine.png')}
+                        source={require('../../assets/DividerLine.png')}
                         style={styles.dividerLine}
                     />
                 </View>

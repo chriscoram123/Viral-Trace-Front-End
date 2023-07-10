@@ -8,7 +8,7 @@ export default function Header() {
             <View style={styles.headerContainer}>
 
                 <View style={styles.imgContainer}>
-                    <Image source={require('../assets/HeaderIcon.png')}></Image>
+                    <Image source={require('../../assets/HeaderIcon.png')}></Image>
                 </View>
 
                 <View style={styles.textContainer}>

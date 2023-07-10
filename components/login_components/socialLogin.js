@@ -13,7 +13,7 @@ export default function SocialLogin () {
                     title="Forgot?"
                     style={styles.googleLink}
                 /> */}
-                    <Image source={require('../assets/GoogleBtn.png')} />
+                    <Image source={require('../../assets/GoogleBtn.png')} />
                 </View>
 
                 <View  style={style.facebookLinkContainer}>
@@ -21,7 +21,7 @@ export default function SocialLogin () {
                     title="New User?"
                     style={styles.facebookLink}
                 /> */}
-                    <Image source={require('../assets/FacebookBtn.png')} />
+                    <Image source={require('../../assets/FacebookBtn.png')} />
                 </View>
             </View>
         </>
