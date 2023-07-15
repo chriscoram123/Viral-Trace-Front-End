@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 
 export default function NewAccount() {
+    // Declared Values
+    const [username, onChangeUsername] = useState('');
+    const [firstName, onChangeFirstName] = useState('');
+    const [lastName, onChangeLastName] = useState('');
+    const [phoneNumber, onChangePhoneNumber] = useState('');
+    const [password, onChangePassword] = useState('');
+    const [confirmPassword, onChangeConfirmPassword] = useState('');
+
     return (
         <View style={styles.pageBackground}>
             <LinearGradient
@@ -20,10 +28,16 @@ export default function NewAccount() {
 
                 {/* Input Fields */}
                 <View style={styles.inputContainer}>
+
                     {/* Username Input */}
                     <View style={styles.userNameField}>
                         <Text style={styles.userNameTitle}>Username</Text>
-                        <TextInput style={styles.textField} />
+                        <TextInput 
+                            style={styles.textField}
+                            value={username}
+                            onChangeText={onChangeUsername}
+                            placeholder={'Username'}
+                        />
                             <View style={styles.imgContainer}>
                                 <Image
                                     source={require('../assets/DividerLine.png')}
@@ -35,7 +49,12 @@ export default function NewAccount() {
                     {/* First Name */}
                     <View style={styles.firstNameField}>
                         <Text style={styles.firstNameTitle}>First Name</Text>
-                        <TextInput style={styles.textField} />
+                        <TextInput 
+                            style={styles.textField}
+                            value={firstName}
+                            onChangeText={onChangeFirstName}
+                            placeholder={'First Name'}
+                        />
                             <View style={styles.imgContainer}>
                                 <Image
                                     source={require('../assets/DividerLine.png')}
@@ -47,7 +66,12 @@ export default function NewAccount() {
                     {/* Last Name */}
                     <View style={styles.lastNameField}>
                         <Text style={styles.lastNameTitle}>Last Name</Text>
-                        <TextInput style={styles.textField} />
+                        <TextInput 
+                            style={styles.textField}
+                            value={lastName}
+                            onChangeText={onChangeLastName}
+                            placeholder={'Last Name'}
+                        />
                             <View style={styles.imgContainer}>
                                 <Image
                                     source={require('../assets/DividerLine.png')}
@@ -59,7 +83,15 @@ export default function NewAccount() {
                     {/* Phone Number */}
                     <View style={styles.phoneNumberField}>
                         <Text style={styles.phoneNumberTitle}>Phone Number</Text>
-                        <TextInput style={styles.textField} />
+                        <TextInput 
+                            style={styles.textField}
+                            value={phoneNumber}
+                            onChangeText={onChangePhoneNumber}
+                            placeholder={'Phone Number'}
+                            keyboardType={"phone-pad"}
+                            multiline={true}
+                            maxLength={250}
+                        />
                             <View style={styles.imgContainer}>
                                 <Image
                                     source={require('../assets/DividerLine.png')}
@@ -73,7 +105,14 @@ export default function NewAccount() {
                     {/* Password */}
                     <View style={styles.passwordField}>
                         <Text style={styles.passwordTitle}>Password</Text>
-                        <TextInput style={styles.textField} />
+                        <TextInput 
+                            style={styles.textField}
+                            value={password}
+                            onChangeText={onChangePassword}
+                            placeholder={'Password'}
+                            multiline={true}
+                            maxLength={250}
+                        />
                             <View style={styles.imgContainer}>
                                 <Image
                                     source={require('../assets/DividerLine.png')}
@@ -87,7 +126,14 @@ export default function NewAccount() {
                     {/* Confirm Password */}
                     <View style={styles.confirmPasswordField}>
                         <Text style={styles.confirmPasswordTitle}>Confirm Password</Text>
-                        <TextInput style={styles.textField} />
+                        <TextInput 
+                            style={styles.textField}
+                            value={confirmPassword}
+                            onChangeText={onChangeConfirmPassword}
+                            placeholder={'Confirm Password'}
+                            multiline={true}
+                            maxLength={250}
+                        />
                             <View style={styles.imgContainer}>
                                 <Image
                                     source={require('../assets/DividerLine.png')}
