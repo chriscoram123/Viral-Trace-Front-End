@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
 
 
 export default function InputFields() {
+    // Declared variables
+    const [emailAddress, onChangeEmailAddress] = useState('');
+    const [passwordField, onChangePasswordField] = useState('');
+
     return (
         <>
             <View style={styles.inputContainer}>
@@ -12,6 +16,9 @@ export default function InputFields() {
                     <Text style={styles.emailFieldTitle}> Email Address </Text>
                     <TextInput
                         style={styles.textField}
+                        value={emailAddress}
+                        onChangeText={onChangeEmailAddress}
+                        placeholder={'Email Address'}
                     />
                     <Image
                         source={require('../../assets/DividerLine.png')}
@@ -23,6 +30,11 @@ export default function InputFields() {
                     <Text style={styles.passwordFieldTitle}> Password </Text>
                     <TextInput
                         style={styles.textField}
+                        value={passwordField}
+                        onChangeText={onChangePasswordField}
+                        placeholder={'Password'}
+                        multiline={true}
+                        maxLength={250}
                     />
                     <Image
                         source={require('../../assets/DividerLine.png')}
