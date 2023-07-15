@@ -1,14 +1,24 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
 
 
 export default function InputFields() {
+    // Declared Variables
+    const [username, onChangeUsername] = useState('');
+    const [emailAddress, onChangeEmailAddress] = useState('');
+    const [phoneNumber, onChangePhoneNumber] = useState('');
+
     return (
         <View style={styles.inputContainer}>
             {/* Username Input */}
             <View style={styles.userNameField}>
                 <Text style={styles.userNameTitle}>Username</Text>
-                <TextInput style={styles.textField} />
+                <TextInput 
+                    style={styles.textField}
+                    value = {username} 
+                    onChangeText={onChangeUsername}
+                    palceholder={'Username'}
+                />
                     <View style={styles.imgContainer}>
                         <Image
                             source={require('../../assets/DividerLine.png')}
@@ -20,7 +30,12 @@ export default function InputFields() {
             {/* Email Address */}
             <View style={styles.emailAddressField}>
                 <Text style={styles.emailAddressTitle}>Email Address</Text>
-                <TextInput style={styles.textField} />
+                <TextInput 
+                    style={styles.textField} 
+                    value = {emailAddress} 
+                    onChangeText={onChangeEmailAddress}
+                    palceholder={'Email Address'}
+                />
                     <View style={styles.imgContainer}>
                         <Image
                             source={require('../../assets/DividerLine.png')}
@@ -32,7 +47,14 @@ export default function InputFields() {
             {/* Phone Number */}
             <View style={styles.phoneNumberField}>
                 <Text style={styles.phoneNumberTitle}>Phone Number</Text>
-                <TextInput style={styles.textField} />
+                <TextInput 
+                    style={styles.textField} 
+                    value = {phoneNumber} 
+                    onChangeText={onChangePhoneNumber}
+                    palceholder={'Phone Number'}
+                    multiline={true}
+                    maxLength={250}
+                />
                     <View style={styles.imgContainer}>
                         <Image
                             source={require('../../assets/DividerLine.png')}
