@@ -1,27 +1,36 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, Button, Pressable } from 'react-native';
 
 export default function SocialLogin () {
+
+    const [google, setGoogle] = useState(false);
+    const [facebook, setFacebook] = useState(false);
+
     return(
         <>
         <Text style={style.footerText}>Also Login With</Text>
 
             <View style={style.socialButtonsContainer}>
                 <View style={style.googleLinkContainer}>
-                {/* <Button 
-                    title="Forgot?"
-                    style={styles.googleLink}
-                /> */}
-                    <Image source={require('../../assets/GoogleBtn.png')} />
+                    <Pressable
+                        onPress={() => {
+                            setGoogle(!google);
+                    }}>
+                        <Image 
+                            source={require('../../assets/GoogleBtn.png')}
+                            // {google ? '' : ''}
+                        />
+                    </Pressable>
                 </View>
 
                 <View  style={style.facebookLinkContainer}>
-                {/* <Button 
-                    title="New User?"
-                    style={styles.facebookLink}
-                /> */}
-                    <Image source={require('../../assets/FacebookBtn.png')} />
+                    <Pressable
+                        onPress={() => {
+                            setFacebook(!facebook);
+                    }}>
+                        <Image source={require('../../assets/FacebookBtn.png')} />
+                    </Pressable>
                 </View>
             </View>
         </>

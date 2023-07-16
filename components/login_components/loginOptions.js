@@ -1,22 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, Button} from 'react-native';
 
 import Navigator from '../../routes/loginStack';
 import { NavigationContainer } from '@react-navigation/native';
 
 export default function LoginOption() {
+  const [login, setLogin] = useState('');
     return (
         <View style={styles.loginButtonsContainer}>
             <View style={styles.loginCon}>
-              {/* <LinearGradient
-                colors={['#B7D0FF', 'B7B7FF']}
-              > */}
                 <Button 
                   title="Login"
                   color='white'
+                  // onPress={() => navigation.navigate()
                 />
-              {/* </LinearGradient> */}
             </View>
             
             <View style={styles.supportContainer}>
