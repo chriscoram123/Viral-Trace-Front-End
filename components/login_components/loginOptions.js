@@ -2,10 +2,9 @@ import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TextInput, Button} from 'react-native';
 
-import Navigator from '../../routes/loginStack';
 import { NavigationContainer } from '@react-navigation/native';
 
-export default function LoginOption() {
+export default function LoginOption(navigation) {
   const [login, setLogin] = useState('');
     return (
         <View style={styles.loginButtonsContainer}>
