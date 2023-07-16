@@ -19,6 +19,21 @@ function Stack() {
                 component={App}
                 options={{ title: 'Login Page' }}
             />
+            <Tab.Screen 
+                name="ForgotAccount"
+                component={ForgotAccount}
+                options={{ title: 'Forgot Account' }}
+            />
+            <Tab.Screen 
+                name="LoadingScreen"
+                component={LoadingScreen}
+                options={{ title: 'Loading Screen' }}
+            />
+            <Tab.Screen 
+                name="NewAccount"
+                component={NewAccount}
+                options={{ title: 'New Account' }}
+            />
         </Tab.Navigator>
     );
 }
