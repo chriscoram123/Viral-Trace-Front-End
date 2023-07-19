@@ -38,20 +38,20 @@ function Stack() {
     );
 }
 
-export default function LoginStack() {
-    return(
-        <NavigationContainer>
-            <Stack.Navigator
-                screenOptions={{headerShown: false}}
-            >
-                <Stack.Screen name="LoginPage" component={App} />
-                <Stack.Screen name="ForgotAccount" component={ForgotAccount} />
-                <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
-                <Stack.Screen name="NewAccount" component={NewAccount} />
-            </Stack.Navigator>
-        </NavigationContainer>
-    );
-}
+// export default function LoginStack() {
+//     return(
+//         <NavigationContainer>
+//             <Stack.Navigator
+//                 screenOptions={{headerShown: false}}
+//             >
+//                 <Stack.Screen name="LoginPage" component={App} />
+//                 <Stack.Screen name="ForgotAccount" component={ForgotAccount} />
+//                 <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
+//                 <Stack.Screen name="NewAccount" component={NewAccount} />
+//             </Stack.Navigator>
+//         </NavigationContainer>
+//     );
+// }
 
 
 

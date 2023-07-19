@@ -2,10 +2,12 @@ import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TextInput, Button} from 'react-native';
 
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 
 export default function LoginOption(navigation) {
   const [login, setLogin] = useState('');
+  
     return (
         <View style={styles.loginButtonsContainer}>
             <View style={styles.loginCon}>
@@ -36,6 +38,23 @@ export default function LoginOption(navigation) {
 
         </View>
     )
+}
+
+const Stack = createNativeStackNavigator();
+
+function LoginStack() {
+  return(
+      <NavigationContainer>
+          <Stack.Navigator
+              screenOptions={{headerShown: false}}
+          >
+              <Stack.Screen name="LoginPage" component={App} />
+              <Stack.Screen name="ForgotAccount" component={ForgotAccount} />
+              <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
+              <Stack.Screen name="NewAccount" component={NewAccount} />
+          </Stack.Navigator>
+      </NavigationContainer>
+  );
 }
 
 const styles = StyleSheet.create({
