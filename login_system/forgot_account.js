@@ -17,7 +17,6 @@ export default function ForgotAccount() {
                 {/* Header Component */}
                 <Header></Header>
 
-
                 {/* Input Field Component */}
                 <InputFields></InputFields>
 

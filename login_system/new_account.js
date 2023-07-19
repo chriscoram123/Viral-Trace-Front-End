@@ -25,7 +25,6 @@ export default function NewAccount() {
                 </View>
 
 
-
                 {/* Input Fields */}
                 <View style={styles.inputContainer}>
 
@@ -100,8 +99,6 @@ export default function NewAccount() {
                             </View>
                     </View>
 
-
-
                     {/* Password */}
                     <View style={styles.passwordField}>
                         <Text style={styles.passwordTitle}>Password</Text>
@@ -120,8 +117,6 @@ export default function NewAccount() {
                                 />
                             </View>
                     </View>
-
-
 
                     {/* Confirm Password */}
                     <View style={styles.confirmPasswordField}>
@@ -144,7 +139,24 @@ export default function NewAccount() {
                 </View>
 
 
+                {/* Button Options */}
+                <View style={styles.buttonContainer}>
+                    <View style={styles.cancelCon}>
+                        <Button 
+                            title="Cancel"
+                            color='white'
+                            onPress={() => navigation.navigate(ForgotAccount)}
+                        />
+                    </View>
 
+                    <View style={styles.submitCon}>
+                        <Button 
+                            title="Submit"
+                            color='white'
+                            onPress={() => navigation.navigate(ForgotAccount)}     
+                        />       
+                    </View>
+                </View>
 
 
 
@@ -163,13 +175,16 @@ const styles = StyleSheet.create({
             flex: 1,
         },
         headerContainer: {
-            marginTop: 100,
-            marginBottom: 50,
+            marginTop: 80,
+            marginBottom: 20,
             alignSelf: 'center',
             // backgroundColor: 'green',
         },
         inputContainer: {
             // backgroundColor: "red",
+        },
+        userNameField: {
+            marginVertical: 15,
         },
         firstNameField: {
             marginVertical: 15,
@@ -187,7 +202,27 @@ const styles = StyleSheet.create({
             marginVertical: 15,
         },
         confirmPasswordField: {
-                        marginVertical: 15,
+            marginVertical: 15,
+        },
+        buttonContainer: {
+            justifyContent: 'center',
+            flexDirection: 'row',
+            marginVertical: 30,
+        },
+        cancelCon: {
+            backgroundColor: "#4D5C98",
+            marginHorizontal: 30,
+            paddingHorizontal: 10,
+            maxHeight: 40,
+            maxWidth: 100,
+            borderRadius: 20,
+        },
+        submitCon: {
+            backgroundColor: "#4D5C98",
+            marginHorizontal: 30,
+            maxHeight: 40,
+            borderRadius: 20,
+            paddingHorizontal: 10,
         },
 
     // Input Fields
