@@ -7,7 +7,11 @@ import { LinearGradient } from 'expo-linear-gradient';
 import Navigator from './routes/loginStack'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
-import { useNavigation } from '@react-navigation/native';
+
+// Stack Navigation Screens
+import ForgotAccount from './login_system/forgot_account.js';
+import LoadingScreen from './login_system/loading_screen';
+import NewAccount from './login_system/new_account';
 
 // Component Imports
 import InputFields from './components/login_components/loginInputFields';
@@ -15,8 +19,7 @@ import Header from './components/login_components/header';
 import LoginOptions from './components/login_components/loginOptions';
 import SocialLogin from './components/login_components/socialLogin';
 
-export default function Login({ navigation }) {
-
+function Login({ navigation: { navigate } }) {
   return (
     <View style={styles.pageBackground}>
       <LinearGradient
@@ -43,7 +46,7 @@ export default function Login({ navigation }) {
               <View style={styles.forgotLink}>
                 <Button 
                   title="Forgot?"
-                  onPress={() => navigation.navigate('ForgotAccount')
+                  onPress={() => navigate('Forgot')
                   }
                 />
               </View>
@@ -51,13 +54,12 @@ export default function Login({ navigation }) {
               <View style={styles.newUserLink}>
                 <Button 
                   title="New User?"
-                  onPress={() => navigation.navigate('NewAccount')
+                  onPress={() => navigate('NewAccount')
                   }
                 />
               </View>
             </View>
         </View>
-
 
         {/* Google & Facebook Login */}
         <SocialLogin></SocialLogin> 
@@ -74,11 +76,11 @@ function LoginStack() {
       <NavigationContainer>
           <Stack.Navigator
               screenOptions={{headerShown: false}}
-          >
-              <Stack.Screen name="LoginPage" component={App} />
-              <Stack.Screen name="ForgotAccount" component={ForgotAccount} />
-              <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
+          > 
+              <Stack.Screen name="LoginPage" component={Login} />
+              <Stack.Screen name="Forgot" component={ForgotAccount} />
               <Stack.Screen name="NewAccount" component={NewAccount} />
+              <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
           </Stack.Navigator>
       </NavigationContainer>
   );
@@ -114,3 +116,6 @@ const styles = StyleSheet.create({
       marginHorizontal: 20,
   },
 });
+
+
+export default LoginStack;
