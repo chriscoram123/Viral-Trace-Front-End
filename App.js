@@ -4,7 +4,6 @@ import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 // Stack Navigation Imports
-import Navigator from './routes/loginStack'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -13,7 +12,7 @@ import ForgotAccount from './login_system/forgot_account.js';
 import LoadingScreen from './login_system/loading_screen';
 import NewAccount from './login_system/new_account';
 
-// Component Imports
+// Stack Component Imports
 import InputFields from './components/login_components/loginInputFields';
 import Header from './components/login_components/header';
 import LoginOptions from './components/login_components/loginOptions';
@@ -38,7 +37,7 @@ function Login({ navigation: { navigate } }) {
                 <Button 
                   title="Login"
                   color='white'
-                  // onPress={() => navigation.navigate()
+                  onPress={() => navigate('LoadingScreen')}
                 />
             </View>
             
