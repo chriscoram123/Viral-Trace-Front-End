@@ -6,14 +6,17 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 
 // Stack Navigation Screens
+// import Login from '../../App';
 
-export default function UserOptions() {
+// Error output "Cannot read property 'navigate' of undefined
+function UserOptions() {
     return (
         <View style={styles.loginButtonsContainer}>
             <View style={styles.cancelCon}>
-                    <Button 
+                    <Button
                         title="Cancel"
                         color='white'
+                        onPress={() => navigate('LoginPage')}
                     />
             </View>
 
@@ -21,12 +24,26 @@ export default function UserOptions() {
                     <Button 
                         title="Submit"
                         color='white'
+                        // onPress={() => navigate('')}
                     />
             </View>
         </View>
     )
 }
 
+const Stack = createNativeStackNavigator();
+
+function ForgotStack() {
+  return(
+      <NavigationContainer>
+          <Stack.Navigator
+              screenOptions={{headerShown: false}}
+          > 
+              <Stack.Screen name="LoginPage" component={Login} />
+          </Stack.Navigator>
+      </NavigationContainer>
+  );
+}
 
 const styles = StyleSheet.create({
     loginButtonsContainer: {
@@ -50,3 +67,5 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
     },
 });
+
+export default UserOptions;
