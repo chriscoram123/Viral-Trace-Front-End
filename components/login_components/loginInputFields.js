@@ -34,7 +34,7 @@ export default function InputFields() {
                         value={passwordField}
                         onChangeText={onChangePasswordField}
                         placeholder={'Password'}
-                        multiline={true}
+                        // multiline={true}
                         maxLength={250}
                         keyboardType={'default'}
                         secureTextEntry={true}
