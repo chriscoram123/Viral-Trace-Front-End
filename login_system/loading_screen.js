@@ -1,16 +1,32 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, Image, Animated, TextInput, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 
 // Animation function will go here 
 
 export default function LoadingScreen() {
+
+  // const load = useRef(new Animated.Value(0)).current // useSharedValue(0)
+
+  // useEffect(() => {
+  //   Animated.timing(load, { 
+  //     toValue: 1,
+  //     duration: 2000,
+  //     useNativeDriver: true,
+  //    }).start();
+  // },[load]);
+
+  // Animated.timing(load,{
+  //   toValue:{x:200,y:500},
+  //   duration:2000
+  // })
+
     return (
         <View style={styles.pageBackground}>
             <LinearGradient
-            colors={['#1D2443','#38428B']}
-            style={styles.pageBackground}
+              colors={['#1D2443','#38428B']}
+              style={styles.pageBackground}
             >
                 {/* Image Container */}
                 <View style={styles.imageContainer}>
@@ -19,13 +35,12 @@ export default function LoadingScreen() {
                         <Text style={styles.headerText}>Welcome To ViralTrace</Text>
                     </View>
 
-                    <View style={{ justifyContent: 'center', flexDirection: 'row', paddingVertical: 100, paddingHorizontal: 40,}}>
+                    <Animated.View style={styles.loadingImage}>
                         <Image 
                             source={require('../assets/Logo.png')}
-                            style={styles.loadingImage}
                             resizeMode=''
                         />
-                    </View>
+                    </Animated.View>
                 </View>
             </LinearGradient>
         </View>
@@ -50,8 +65,12 @@ const styles = StyleSheet.create({
       },
 
       loadingImage: {
-
+        justifyContent: 'center', 
+        flexDirection: 'row', 
+        paddingVertical: 100, 
+        paddingHorizontal: 40,
       },
+
       headerText: {
         fontSize: 25,
         color: 'white',

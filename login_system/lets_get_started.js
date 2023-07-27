@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, Image, Animated, TextInput, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 // Stack Navigation Imports
@@ -9,7 +9,21 @@ import { NavigationContainer } from '@react-navigation/native';
 // Stack Navigation Screens
 
 
-// Animation function will go here 
+// Animation functions will go here 
+// const load = useRef(new Animated.Value(0)).current // useSharedValue(0)
+
+// const load = useState(new Animated.ValueXY({ x:0, y:0 }))[0]
+
+// Error: Cannot read property 'useState' of null
+// const load = useState(new Animated.Value(0))
+
+// useEffect(() => {
+//   Animated.timing(load, { 
+//     toValue: 1,
+//     duration: 5000,
+//     useNativeDriver: false,
+//    }).start();
+// },[load]);
 
 export default function IntroScreen() {
     return (
@@ -32,9 +46,9 @@ export default function IntroScreen() {
                     </View>
 
 
-                    <View style={styles.textContainer}>
+                    <Animated.View style={styles.textContainer}>
                         <Text style={styles.headerText}>Lets Get Started</Text>
-                    </View>
+                    </Animated.View>
 
                 </View>
             </LinearGradient>
