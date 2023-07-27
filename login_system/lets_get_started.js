@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { StyleSheet, Text, View, Image, Animated, TextInput, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -8,24 +8,28 @@ import { NavigationContainer } from '@react-navigation/native';
 
 // Stack Navigation Screens
 
-
-// Animation functions will go here 
-// const load = useRef(new Animated.Value(0)).current // useSharedValue(0)
-
-// const load = useState(new Animated.ValueXY({ x:0, y:0 }))[0]
-
-// Error: Cannot read property 'useState' of null
-// const load = useState(new Animated.Value(0))
-
-// useEffect(() => {
-//   Animated.timing(load, { 
-//     toValue: 1,
-//     duration: 5000,
-//     useNativeDriver: false,
-//    }).start();
-// },[load]);
-
 export default function IntroScreen() {
+    const fadeAnim = useRef(new Animated.Value(0)).current
+
+    const fadeInOut = () => {
+        Animated.sequence([
+            Animated.timing(fadeAnim, {
+                toValue: 1,
+                duration: 2000,
+                useNativeDriver: true,
+            }),
+            Animated.timing(fadeAnim, {
+                toValue: 0,
+                duration: 1000,
+                useNativeDriver: true,
+            }),
+        ]).start(() => fadeInOut());
+    };
+
+    useEffect(() => {
+        fadeInOut();
+    },[]);
+
     return (
         <View style={styles.pageBackground}>
             <LinearGradient
@@ -45,9 +49,10 @@ export default function IntroScreen() {
                         />
                     </View>
 
-
-                    <Animated.View style={styles.textContainer}>
-                        <Text style={styles.headerText}>Lets Get Started</Text>
+                    <Animated.View style={{ opacity: fadeAnim }}>
+                        <View style={styles.textContainer}>
+                            <Text style={styles.headerText}>Lets Get Started</Text>
+                        </View>
                     </Animated.View>
 
                 </View>
