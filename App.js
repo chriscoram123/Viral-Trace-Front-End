@@ -76,7 +76,6 @@ function LoginStack() {
           <Stack.Navigator
               screenOptions={{headerShown: false}}
           > 
-              <Stack.Screen name="LoginPage" component={Login} />
               <Stack.Screen name="Forgot" component={ForgotAccount} />
               <Stack.Screen name="NewAccount" component={NewAccount} />
               <Stack.Screen name="LoadingScreen" component={LoadingScreen} />

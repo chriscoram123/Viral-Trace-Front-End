@@ -7,8 +7,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 
 // Stack Navigation Screens
+import Login from '../App'
 
-export default function IntroScreen() {
+function IntroScreen() {
+
+    // Animation Sequence
     const fadeAnim = useRef(new Animated.Value(0)).current
 
     const fadeInOut = () => {
@@ -51,7 +54,9 @@ export default function IntroScreen() {
 
                     <Animated.View style={{ opacity: fadeAnim }}>
                         <View style={styles.textContainer}>
-                            <Text style={styles.headerText}>Lets Get Started</Text>
+                            <Text 
+                                style={styles.headerText}
+                            >Lets Get Started</Text>
                         </View>
                     </Animated.View>
 
@@ -60,6 +65,20 @@ export default function IntroScreen() {
         </View>
     )
 }
+
+// const Stack = createNativeStackNavigator();
+
+// function IntroStack() {
+//   return(
+//       <NavigationContainer>
+//           <Stack.Navigator
+//               screenOptions={{headerShown: false}}
+//           > 
+//               <Stack.Screen name="LoginPage" component={Login} />
+//           </Stack.Navigator>
+//       </NavigationContainer>
+//   );
+// }
 
 const styles = StyleSheet.create({
       // Containers
@@ -91,3 +110,5 @@ const styles = StyleSheet.create({
         letterSpacing: 2.4,
       }
 });
+
+export default IntroScreen;
