@@ -10,7 +10,7 @@ import LoadingScreen from '../../login_system/loading_screen_copy'
 // import Login from '../../App';
 
 // Error output "Cannot read property 'navigate' of undefined
-function UserOptions({ navigation: { navigate } }) {
+function UserOptions() {
     return (
         <View style={styles.loginButtonsContainer}>
             <View style={styles.cancelCon}>

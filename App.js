@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TextInput, Button, Animated } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -19,6 +19,30 @@ import LoginOptions from './components/login_components/loginOptions';
 import SocialLogin from './components/login_components/socialLogin';
 
 function Login({ navigation: { navigate } }) {
+
+      // Animation Sequence
+      const fadeAnim = useRef(new Animated.Value(0)).current
+
+      const fadeInOut = () => {
+          Animated.sequence([
+              Animated.timing(fadeAnim, {
+                  toValue: 1,
+                  duration: 5000,
+                  useNativeDriver: true,
+              }),
+              Animated.timing(fadeAnim, {
+                  toValue: 0,
+                  duration: 1000,
+                  useNativeDriver: true,
+              }),
+          ]).start(() => fadeInOut());
+      };
+  
+      useEffect(() => {
+          fadeInOut();
+      },[]);
+
+      
   return (
     <View style={styles.pageBackground}>
       <LinearGradient
@@ -33,13 +57,15 @@ function Login({ navigation: { navigate } }) {
 
         {/* Login Options */}
         <View style={styles.loginButtonsContainer}>
-            <View style={styles.loginCon}>
-                <Button 
-                  title="Login"
-                  color='white'
-                  onPress={() => navigate('LoadingScreen')}
-                />
-            </View>
+            <Animated.View style={{ opacity: fadeAnim }}>
+              <View style={styles.loginCon}>
+                  <Button 
+                    title="Login"
+                    color='white'
+                    onPress={() => navigate('LoadingScreen')}
+                  />
+              </View>
+            </Animated.View>
             
             <View style={styles.supportContainer}>
               <View style={styles.forgotLink}>
@@ -76,6 +102,7 @@ function LoginStack() {
           <Stack.Navigator
               screenOptions={{headerShown: false}}
           > 
+              <Stack.Screen name="Login" component={Login} />
               <Stack.Screen name="Forgot" component={ForgotAccount} />
               <Stack.Screen name="NewAccount" component={NewAccount} />
               <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
