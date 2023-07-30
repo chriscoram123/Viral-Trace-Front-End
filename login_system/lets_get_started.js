@@ -8,8 +8,11 @@ import { NavigationContainer } from '@react-navigation/native';
 
 // Stack Navigation Screens
 import Login from '../App'
+import ForgotAccount from './login_system/forgot_account.js';
+import LoadingScreen from './login_system/loading_screen';
+import NewAccount from './login_system/new_account';
 
-function IntroScreen() {
+function IntroScreen({ navigation: { navigate } }) {
 
     // Animation Sequence
     const fadeAnim = useRef(new Animated.Value(0)).current
@@ -54,9 +57,11 @@ function IntroScreen() {
 
                     <Animated.View style={{ opacity: fadeAnim }}>
                         <View style={styles.textContainer}>
-                            <Text 
-                                style={styles.headerText}
-                            >Lets Get Started</Text>
+                            <Button 
+                                title="Lets Get Started"
+                                color='white'
+                                onPress={() => navigate('Login')}
+                            />
                         </View>
                     </Animated.View>
 
@@ -66,19 +71,25 @@ function IntroScreen() {
     )
 }
 
-// const Stack = createNativeStackNavigator();
 
-// function IntroStack() {
-//   return(
-//       <NavigationContainer>
-//           <Stack.Navigator
-//               screenOptions={{headerShown: false}}
-//           > 
-//               <Stack.Screen name="LoginPage" component={Login} />
-//           </Stack.Navigator>
-//       </NavigationContainer>
-//   );
-// }
+
+const Stack = createNativeStackNavigator();
+
+export default function IntroStack() {
+  return(
+      <NavigationContainer>
+          <Stack.Navigator
+              screenOptions={{ headerShown:false }}
+          > 
+            <Stack.Screen name="Intro" component={IntroScreen} />
+            <Stack.Screen name="Login" component={Login} />
+            <Stack.Screen name="Forgot" component={ForgotAccount} />
+            <Stack.Screen name="NewAccount" component={NewAccount} />
+            <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
+          </Stack.Navigator>
+      </NavigationContainer>
+  );
+}
 
 const styles = StyleSheet.create({
       // Containers
@@ -110,5 +121,3 @@ const styles = StyleSheet.create({
         letterSpacing: 2.4,
       }
 });
-
-export default IntroScreen;

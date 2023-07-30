@@ -18,7 +18,7 @@ import Header from './components/login_components/header';
 import LoginOptions from './components/login_components/loginOptions';
 import SocialLogin from './components/login_components/socialLogin';
 
-function Login({ navigation: { navigate } }) {
+export default function Login() {
 
       // Animation Sequence
       const fadeAnim = useRef(new Animated.Value(0)).current
@@ -94,22 +94,22 @@ function Login({ navigation: { navigate } }) {
   )
 }
 
-const Stack = createNativeStackNavigator();
+// const Stack = createNativeStackNavigator();
 
-function LoginStack() {
-  return(
-      <NavigationContainer>
-          <Stack.Navigator
-              screenOptions={{headerShown: false}}
-          > 
-              <Stack.Screen name="Login" component={Login} />
-              <Stack.Screen name="Forgot" component={ForgotAccount} />
-              <Stack.Screen name="NewAccount" component={NewAccount} />
-              <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
-          </Stack.Navigator>
-      </NavigationContainer>
-  );
-}
+// function LoginStack() {
+//   return(
+//       <NavigationContainer>
+//           <Stack.Navigator
+//               screenOptions={{headerShown: false}}
+//           > 
+//               <Stack.Screen name="Login" component={Login} />
+//               <Stack.Screen name="Forgot" component={ForgotAccount} />
+//               <Stack.Screen name="NewAccount" component={NewAccount} />
+//               <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
+//           </Stack.Navigator>
+//       </NavigationContainer>
+//   );
+// }
 
 const styles = StyleSheet.create({
   // Containers
@@ -143,4 +143,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default LoginStack;
+// export default LoginStack;
