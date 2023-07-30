@@ -8,9 +8,9 @@ import { NavigationContainer } from '@react-navigation/native';
 
 // Stack Navigation Screens
 import Login from '../App'
-import ForgotAccount from './login_system/forgot_account.js';
-import LoadingScreen from './login_system/loading_screen';
-import NewAccount from './login_system/new_account';
+import ForgotAccount from '../login_system/forgot_account.js';
+import LoadingScreen from '../login_system/loading_screen';
+import NewAccount from '../login_system/new_account';
 
 function IntroScreen({ navigation: { navigate } }) {
 
