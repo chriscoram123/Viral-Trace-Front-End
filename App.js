@@ -21,81 +21,94 @@ import SocialLogin from './components/login_components/socialLogin';
 export default function Login({ navigation: { navigate } }) {
 
       // Animation Sequence
-      const fadeAnim = useRef(new Animated.Value(0)).current
+      const fadeAnim = useRef(new Animated.Value(0)).current;
+      const fadeInAnim = useRef(new Animated.Value(0)).current;
 
       const fadeInOut = () => {
-          Animated.sequence([
-              Animated.timing(fadeAnim, {
-                  toValue: 1,
-                  duration: 5000,
-                  useNativeDriver: true,
-              }),
-              Animated.timing(fadeAnim, {
-                  toValue: 0,
-                  duration: 1000,
-                  useNativeDriver: true,
-              }),
-          ]).start(() => fadeInOut());
+        Animated.sequence([
+            Animated.timing(fadeAnim, {
+                toValue: 1,
+                duration: 5000,
+                useNativeDriver: true,
+            }),
+            Animated.timing(fadeAnim, {
+                toValue: 0,
+                duration: 1000,
+                useNativeDriver: true,
+            }),
+        ]).start(() => fadeInOut());
       };
   
+      const fadeIn = () => {
+        Animated.sequence([
+          Animated.timing(fadeInAnim, {
+              toValue: 1,
+              duration: 1000,
+              useNativeDriver: true,
+          }),
+        ]).start(() => fadeIn());
+      };
+
       useEffect(() => {
           fadeInOut();
       },[]);
 
       
   return (
-    <View style={styles.pageBackground}>
-      <ImageBackground
-        style={styles.imageBackground}
-        source={require('./assets/pexels-neo-2653362.jpg')}
-      >
-        <LinearGradient
-          colors={['rgba(0,0,0,0)','#38428B']}
-          style={styles.pageBackground}
+    // <Animated.View style={{ opacity: fadeInAnim}}>
+      <View style={styles.pageBackground}>
+        <ImageBackground
+          style={styles.imageBackground}
+          source={require('./assets/pexels-neo-2653362.jpg')}
         >
-          {/* Header */}
-          <Header></Header>
+          <LinearGradient
+            colors={['rgba(0,0,0,0)','#38428B']}
+            style={styles.pageBackground}
+          >
+            {/* Header */}
+            <Header></Header>
 
-          {/* Input Fields */}
-          <InputFields></InputFields>
+            {/* Input Fields */}
+            <InputFields></InputFields>
 
-          {/* Login Options */}
-          <View style={styles.loginButtonsContainer}>
-              <Animated.View style={{ opacity: fadeAnim }}>
-                <View style={styles.loginCon}>
+            {/* Login Options */}
+            <View style={styles.loginButtonsContainer}>
+                <Animated.View style={{ opacity: fadeAnim }}>
+                  <View style={styles.loginCon}>
+                      <Button 
+                        title="Login"
+                        color='white'
+                        onPress={() => navigate('LoadingScreen')}
+                      />
+                  </View>
+                </Animated.View>
+                
+                <View style={styles.supportContainer}>
+                  <View style={styles.forgotLink}>
                     <Button 
-                      title="Login"
-                      color='white'
-                      onPress={() => navigate('LoadingScreen')}
+                      title="Forgot?"
+                      onPress={() => navigate('Forgot')
+                      }
                     />
-                </View>
-              </Animated.View>
-              
-              <View style={styles.supportContainer}>
-                <View style={styles.forgotLink}>
-                  <Button 
-                    title="Forgot?"
-                    onPress={() => navigate('Forgot')
-                    }
-                  />
-                </View>
+                  </View>
 
-                <View style={styles.newUserLink}>
-                  <Button 
-                    title="New User?"
-                    onPress={() => navigate('NewAccount')
-                    }
-                  />
+                  <View style={styles.newUserLink}>
+                    <Button 
+                      title="New User?"
+                      onPress={() => navigate('NewAccount')
+                      }
+                    />
+                  </View>
                 </View>
-              </View>
-          </View>
+            </View>
 
-          {/* Google & Facebook Login */}
-          <SocialLogin></SocialLogin> 
+            {/* Google & Facebook Login */}
+            <SocialLogin></SocialLogin> 
 
-        </LinearGradient>
-      </ImageBackground>
-    </View>
+          </LinearGradient>
+        </ImageBackground>
+      </View>
+    // </Animated.View>
   )
 }
 
