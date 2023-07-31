@@ -1,6 +1,6 @@
 import React, { useRef, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TextInput, Button, Animated } from 'react-native';
+import { StyleSheet, View, ImageBackground, Button, Animated } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 // Stack Navigation Imports
@@ -45,51 +45,56 @@ export default function Login({ navigation: { navigate } }) {
       
   return (
     <View style={styles.pageBackground}>
-      <LinearGradient
-        colors={['#1D2443','#38428B']}
-        style={styles.pageBackground}
+      <ImageBackground
+        style={styles.imageBackground}
+        source={require('./assets/pexels-neo-2653362.jpg')}
       >
-        {/* Header */}
-        <Header></Header>
+        <LinearGradient
+          colors={['rgba(0,0,0,0)','#38428B']}
+          style={styles.pageBackground}
+        >
+          {/* Header */}
+          <Header></Header>
 
-        {/* Input Fields */}
-        <InputFields></InputFields>
+          {/* Input Fields */}
+          <InputFields></InputFields>
 
-        {/* Login Options */}
-        <View style={styles.loginButtonsContainer}>
-            <Animated.View style={{ opacity: fadeAnim }}>
-              <View style={styles.loginCon}>
+          {/* Login Options */}
+          <View style={styles.loginButtonsContainer}>
+              <Animated.View style={{ opacity: fadeAnim }}>
+                <View style={styles.loginCon}>
+                    <Button 
+                      title="Login"
+                      color='white'
+                      onPress={() => navigate('LoadingScreen')}
+                    />
+                </View>
+              </Animated.View>
+              
+              <View style={styles.supportContainer}>
+                <View style={styles.forgotLink}>
                   <Button 
-                    title="Login"
-                    color='white'
-                    onPress={() => navigate('LoadingScreen')}
+                    title="Forgot?"
+                    onPress={() => navigate('Forgot')
+                    }
                   />
-              </View>
-            </Animated.View>
-            
-            <View style={styles.supportContainer}>
-              <View style={styles.forgotLink}>
-                <Button 
-                  title="Forgot?"
-                  onPress={() => navigate('Forgot')
-                  }
-                />
-              </View>
+                </View>
 
-              <View style={styles.newUserLink}>
-                <Button 
-                  title="New User?"
-                  onPress={() => navigate('NewAccount')
-                  }
-                />
+                <View style={styles.newUserLink}>
+                  <Button 
+                    title="New User?"
+                    onPress={() => navigate('NewAccount')
+                    }
+                  />
+                </View>
               </View>
-            </View>
-        </View>
+          </View>
 
-        {/* Google & Facebook Login */}
-        <SocialLogin></SocialLogin> 
+          {/* Google & Facebook Login */}
+          <SocialLogin></SocialLogin> 
 
-      </LinearGradient>
+        </LinearGradient>
+      </ImageBackground>
     </View>
   )
 }
@@ -115,6 +120,10 @@ const styles = StyleSheet.create({
   // Containers
     pageBackground: {
       flex: 1,
+    },
+    imageBackground: {
+      flex:1,
+      justifyContent: "center",
     },
 
 

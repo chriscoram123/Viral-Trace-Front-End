@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { StyleSheet, Text, View, Image, Animated, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, Image, Animated, ImageBackground, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 // Stack Navigation Imports
@@ -38,35 +38,40 @@ function IntroScreen({ navigation: { navigate } }) {
 
     return (
         <View style={styles.pageBackground}>
-            <LinearGradient
-            colors={['#1D2443','#38428B']}
-            style={styles.pageBackground}
-            >
-                {/* Image Container */}
-                <View style={styles.imageContainer}>
+            <ImageBackground
+                style={styles.imageBackground}
+                source={require('../assets/pexels-neo-2653362.jpg')}>
 
-                    <View style={{ justifyContent: 'center', flexDirection: 'row', paddingVertical: 100, paddingHorizontal: 40, 
-                        marginVertical: 100,
-                    }}>
-                        <Image 
-                            source={require('../assets/Logo.png')}
-                            style={styles.loadingImage}
-                            resizeMode=''
-                        />
-                    </View>
+                <LinearGradient
+                colors={['rgba(0,0,0,0)','#38428B']}
+                style={styles.pageBackground}
+                >
+                    {/* Image Container */}
+                    <View style={styles.imageContainer}>
 
-                    <Animated.View style={{ opacity: fadeAnim }}>
-                        <View style={styles.textContainer}>
-                            <Button 
-                                title="Lets Get Started"
-                                color='white'
-                                onPress={() => navigate('Login')}
+                        <View style={{ justifyContent: 'center', flexDirection: 'row', paddingVertical: 100, paddingHorizontal: 40, 
+                            marginVertical: 100,
+                        }}>
+                            <Image 
+                                source={require('../assets/Logo.png')}
+                                style={styles.loadingImage}
+                                resizeMode=''
                             />
                         </View>
-                    </Animated.View>
 
-                </View>
-            </LinearGradient>
+                        <Animated.View style={{ opacity: fadeAnim }}>
+                            <View style={styles.textContainer}>
+                                <Button 
+                                    title="Lets Get Started"
+                                    color='white'
+                                    onPress={() => navigate('Login')}
+                                />
+                            </View>
+                        </Animated.View>
+
+                    </View>
+                </LinearGradient>
+            </ImageBackground>
         </View>
     )
 }
@@ -95,7 +100,11 @@ const styles = StyleSheet.create({
       // Containers
       pageBackground: {
         flex: 1,
-      },  
+      }, 
+      imageBackground: {
+        flex:1,
+        justifyContent: "center",
+      },
       imageContainer: {
         justifyContent: "center",
         // backgroundColor: "red",
