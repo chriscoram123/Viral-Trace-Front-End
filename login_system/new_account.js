@@ -94,8 +94,6 @@ export default function NewAccount({ navigation: { navigate } }) {
                             onChangeText={onChangePhoneNumber}
                             placeholder={'Phone Number'}
                             keyboardType={"phone-pad"}
-                            multiline={true}
-                            maxLength={250}
                         />
                             <View style={styles.imgContainer}>
                                 <Image
@@ -113,8 +111,6 @@ export default function NewAccount({ navigation: { navigate } }) {
                             value={password}
                             onChangeText={onChangePassword}
                             placeholder={'Password'}
-                            multiline={true}
-                            maxLength={250}
                         />
                             <View style={styles.imgContainer}>
                                 <Image
@@ -132,8 +128,6 @@ export default function NewAccount({ navigation: { navigate } }) {
                             value={confirmPassword}
                             onChangeText={onChangeConfirmPassword}
                             placeholder={'Confirm Password'}
-                            multiline={true}
-                            maxLength={250}
                         />
                             <View style={styles.imgContainer}>
                                 <Image
