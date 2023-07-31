@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useRef, useEffect, useState} from 'react';
 import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
+// Stack Navigation Imports
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
 
-export default function NewAccount() {
+// Stack Navigation Screens
+import LoadingScreen from '../login_system/loading_screen';
+
+export default function NewAccount({ navigation: { navigate } }) {
     // Declared Values
     const [username, onChangeUsername] = useState('');
     const [firstName, onChangeFirstName] = useState('');
@@ -145,7 +151,7 @@ export default function NewAccount() {
                         <Button 
                             title="Cancel"
                             color='white'
-                            onPress={() => navigation.navigate(ForgotAccount)}
+                            // onPress={() => navigate('ForgotAccount')}
                         />
                     </View>
 
@@ -153,20 +159,33 @@ export default function NewAccount() {
                         <Button 
                             title="Submit"
                             color='white'
-                            onPress={() => navigation.navigate(ForgotAccount)}     
+                            onPress={() => navigate('LoadingScreen')}     
                         />       
                     </View>
                 </View>
-
-
-
-
 
 
             </LinearGradient>
         </View>
     )
 }
+
+
+
+const Stack = createNativeStackNavigator();
+
+function LoginStack() {
+  return(
+      <NavigationContainer>
+          <Stack.Navigator
+              screenOptions={{headerShown: false}}
+          > 
+              <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
+          </Stack.Navigator>
+      </NavigationContainer>
+  );
+}
+
 
 const styles = StyleSheet.create({
     // Containers
