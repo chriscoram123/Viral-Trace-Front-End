@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect,} from 'react';
 import { StyleSheet, Text, View, Image, Animated, TextInput, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -7,21 +7,29 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 export default function LoadingScreen() {
 
-  // const load = useRef(new Animated.Value(0)).current // useSharedValue(0)
+    // Animation Sequence
+    const fadeAnim = useRef(new Animated.Value(0)).current
 
-  // useEffect(() => {
-  //   Animated.timing(load, { 
-  //     toValue: 1,
-  //     duration: 2000,
-  //     useNativeDriver: true,
-  //    }).start();
-  // },[load]);
+    const fadeInOut = () => {
+        Animated.sequence([
+            Animated.timing(fadeAnim, {
+                toValue: 1,
+                duration: 5000,
+                useNativeDriver: true,
+            }),
+            Animated.timing(fadeAnim, {
+                toValue: 0,
+                duration: 1000,
+                useNativeDriver: true,
+            }),
+        ]).start(() => fadeInOut());
+    };
 
-  // Animated.timing(load,{
-  //   toValue:{x:200,y:500},
-  //   duration:2000
-  // })
+    useEffect(() => {
+        fadeInOut();
+    },[]);
 
+      
     return (
         <View style={styles.pageBackground}>
             <LinearGradient
@@ -34,12 +42,14 @@ export default function LoadingScreen() {
                     <View style={styles.textContainer}>
                         <Text style={styles.headerText}>Welcome To ViralTrace</Text>
                     </View>
-
-                    <Animated.View style={styles.loadingImage}>
-                        <Image 
-                            source={require('../assets/Logo.png')}
-                            resizeMode=''
-                        />
+                    
+                    <Animated.View style={{ opacity: fadeAnim }}>
+                      <View style={styles.loadingImage}>
+                          <Image 
+                              source={require('../assets/Logo.png')}
+                              resizeMode=''
+                          />
+                      </View>
                     </Animated.View>
                 </View>
             </LinearGradient>
