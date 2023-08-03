@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TextInput, Button, Pressable } from 'react-native';
+import { StyleSheet, Text, View, Image, Modal, TouchableOpacity } from 'react-native';
 
 // Stack Navigation Imports
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -11,8 +11,11 @@ import { NavigationContainer } from '@react-navigation/native';
 
 export default function SocialLogin () {
 
-    const [google, setGoogle] = useState(false);
-    const [facebook, setFacebook] = useState(false);
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const toggleModal = () => {
+      setIsModalVisible(!isModalVisible);
+    };
 
     return(
         <>
@@ -20,24 +23,16 @@ export default function SocialLogin () {
 
             <View style={style.socialButtonsContainer}>
                 <View style={style.googleLinkContainer}>
-                    <Pressable
-                        onPress={() => {
-                            setGoogle(!google);
-                    }}>
+                    <TouchableOpacity onPress={toggleModal}>
                         <Image 
-                            source={require('../../assets/GoogleBtn.png')}
-                            // {google ? '' : ''}
-                        />
-                    </Pressable>
+                            source={require('../../assets/GoogleBtn.png')} />
+                    </TouchableOpacity>
                 </View>
 
                 <View  style={style.facebookLinkContainer}>
-                    <Pressable
-                        onPress={() => {
-                            setFacebook(!facebook);
-                    }}>
+                    <TouchableOpacity>
                         <Image source={require('../../assets/FacebookBtn.png')} />
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
             </View>
         </>
