@@ -2,6 +2,13 @@ import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TextInput, Button, Pressable } from 'react-native';
 
+// Stack Navigation Imports
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+
+// Stack Navigation Screens
+
+
 export default function SocialLogin () {
 
     const [google, setGoogle] = useState(false);
@@ -36,6 +43,24 @@ export default function SocialLogin () {
         </>
     )
 }
+
+// const Stack = createNativeStackNavigator();
+
+// export default function IntroStack() {
+//   return(
+//       <NavigationContainer>
+//           <Stack.Navigator
+//               screenOptions={{ headerShown:false }}
+//           > 
+//             <Stack.Screen name="Intro" component={IntroScreen} />
+//             <Stack.Screen name="Login" component={Login} />
+//             <Stack.Screen name="Forgot" component={ForgotAccount} />
+//             <Stack.Screen name="NewAccount" component={NewAccount} />
+//             <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
+//           </Stack.Navigator>
+//       </NavigationContainer>
+//   );
+// }
 
 const style = StyleSheet.create({
     footerText: {
