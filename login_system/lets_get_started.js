@@ -52,14 +52,15 @@ function IntroScreen({ navigation: { navigate } }) {
                         <View style={{ justifyContent: 'center', flexDirection: 'row', paddingVertical: 100, paddingHorizontal: 40, 
                             marginVertical: 100,
                         }}>
-                            <Image 
-                                source={require('../assets/Logo.png')}
-                                style={styles.loadingImage}
-                                resizeMode=''
-                            />
+                            <Animated.View style={{ opacity: fadeAnim }}>
+                                <Image 
+                                    source={require('../assets/Logo.png')}
+                                    style={styles.loadingImage}
+                                    resizeMode=''
+                                />
+                            </Animated.View>
                         </View>
 
-                        <Animated.View style={{ opacity: fadeAnim }}>
                             <View style={styles.textContainer}>
                                 <Button 
                                     title="Lets Get Started"
@@ -67,7 +68,6 @@ function IntroScreen({ navigation: { navigate } }) {
                                     onPress={() => navigate('Login')}
                                 />
                             </View>
-                        </Animated.View>
 
                     </View>
                 </LinearGradient>

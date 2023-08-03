@@ -1,5 +1,5 @@
 import React, { useRef, useEffect,} from 'react';
-import { StyleSheet, Text, View, Image, Animated, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, Image, Animated, ImageBackground } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 
@@ -32,27 +32,32 @@ export default function LoadingScreen() {
       
     return (
         <View style={styles.pageBackground}>
-            <LinearGradient
-              colors={['#1D2443','#38428B']}
-              style={styles.pageBackground}
-            >
-                {/* Image Container */}
-                <View style={styles.imageContainer}>
+            <ImageBackground
+                style={styles.imageBackground}
+                source={require('../assets/abstract-g981b6ef0a_1280.jpg')}>
 
-                    <View style={styles.textContainer}>
-                        <Text style={styles.headerText}>Welcome To ViralTrace</Text>
-                    </View>
-                    
-                    <Animated.View style={{ opacity: fadeAnim }}>
-                      <View style={styles.loadingImage}>
-                          <Image 
-                              source={require('../assets/Logo.png')}
-                              resizeMode=''
-                          />
+              <LinearGradient
+                colors={['rgba(0,0,0,0.9)','#38428B']}
+                style={styles.pageBackground}
+              >
+                  {/* Image Container */}
+                  <View style={styles.imageContainer}>
+
+                      <View style={styles.textContainer}>
+                          <Text style={styles.headerText}>Welcome To Viral Trace</Text>
                       </View>
-                    </Animated.View>
-                </View>
-            </LinearGradient>
+                      
+                      <Animated.View style={{ opacity: fadeAnim }}>
+                        <View style={styles.loadingImage}>
+                            <Image 
+                                source={require('../assets/Logo.png')}
+                                resizeMode=''
+                            />
+                        </View>
+                      </Animated.View>
+                  </View>
+              </LinearGradient>
+            </ImageBackground>
         </View>
     )
 }
@@ -61,7 +66,12 @@ const styles = StyleSheet.create({
       // Containers
       pageBackground: {
         flex: 1,
-      },  
+      },
+      imageBackground: {
+        flex:1,
+        justifyContent: "center",
+      },
+
       imageContainer: {
         justifyContent: "center",
         // backgroundColor: "green",
@@ -71,12 +81,13 @@ const styles = StyleSheet.create({
       textContainer: {
         justifyContent: 'center',
         flexDirection: 'row',
-        paddingVertical: 20,
+        paddingVertical: 30,
       },
 
       loadingImage: {
         justifyContent: 'center', 
-        flexDirection: 'row', 
+        flexDirection: 'row',
+        marginVertical: 40,
         paddingVertical: 100, 
         paddingHorizontal: 40,
       },
@@ -84,6 +95,6 @@ const styles = StyleSheet.create({
       headerText: {
         fontSize: 25,
         color: 'white',
-        letterSpacing: 2.4,
+        letterSpacing: 2.5,
       }
 });
