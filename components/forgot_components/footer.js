@@ -1,6 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
 
+// // Stack Navigation Imports
+// import { createNativeStackNavigator } from '@react-navigation/native-stack';
+// import { NavigationContainer } from '@react-navigation/native';
+
+// // Stack Navigation Screens
+// import LoadingScreen from '../../login_system/loading_screen'
+
 export default function Footer() {
     return (
         <View style={styles.footerCon}>
@@ -13,11 +20,27 @@ export default function Footer() {
                 <Button 
                     title="Need Help"
                     color='white'
+                    // onPress={() => navigate('LoadingScreen')}
                 />
             </View>
         </View>
     )
 }
+
+// const Stack = createNativeStackNavigator();
+
+// export function ForgotStack() {
+//   return(
+//       <NavigationContainer>
+//           <Stack.Navigator
+//               screenOptions={{headerShown: false}}
+//           >               
+//                 <Stack.Screen name="Footer" component={Footer} />
+//                 <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
+//           </Stack.Navigator>
+//       </NavigationContainer>
+//   );
+// }
 
 const styles = StyleSheet.create({
     footerTextCon: {
