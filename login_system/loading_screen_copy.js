@@ -5,12 +5,12 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 // Animation function will go here 
 
-export default function LoadingScreen() {
+export default function NeedHelpLoading() {
     return (
         <View style={styles.pageBackground}>
             <LinearGradient
-            colors={['#1D2443','#38428B']}
-            style={styles.pageBackground}
+              colors={['#1D2443','#38428B']}
+              style={styles.pageBackground}
             >
                 {/* Image Container */}
                 <View style={styles.imageContainer}>
