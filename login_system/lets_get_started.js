@@ -14,9 +14,10 @@ import NewAccount from '../login_system/new_account';
 
 function IntroScreen({ navigation: { navigate } }) {
 
-    // Animation Sequence
+    // Variable for a fade-in animation"
     const fadeAnim = useRef(new Animated.Value(0)).current
 
+    // Animation Sequence
     const fadeInOut = () => {
         Animated.sequence([
             Animated.timing(fadeAnim, {
@@ -46,12 +47,13 @@ function IntroScreen({ navigation: { navigate } }) {
                 colors={['rgba(0,0,0,0)','#38428B']}
                 style={styles.pageBackground}
                 >
-                    {/* Image Container */}
+                    {/* Container for Images */}
                     <View style={styles.imageContainer}>
 
                         <View style={{ justifyContent: 'center', flexDirection: 'row', paddingVertical: 100, paddingHorizontal: 40, 
                             marginVertical: 100,
                         }}>
+                            {/* Image with Animation */}
                             <Animated.View style={{ opacity: fadeAnim }}>
                                 <Image 
                                     source={require('../assets/Logo.png')}
@@ -61,6 +63,7 @@ function IntroScreen({ navigation: { navigate } }) {
                             </Animated.View>
                         </View>
 
+                            {/* Text Container for Login Button */}
                             <View style={styles.textContainer}>
                                 <Button 
                                     title="Lets Get Started"
@@ -83,47 +86,46 @@ const Stack = createNativeStackNavigator();
 export default function IntroStack() {
   return(
       <NavigationContainer>
-          <Stack.Navigator
-              screenOptions={{ headerShown:false }}
-          > 
-            <Stack.Screen name="Intro" component={IntroScreen} />
-            <Stack.Screen name="Login" component={Login} />
-            <Stack.Screen name="Forgot" component={ForgotAccount} />
-            <Stack.Screen name="NewAccount" component={NewAccount} />
-            <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
-          </Stack.Navigator>
+            <Stack.Navigator
+                screenOptions={{ headerShown:false }}
+            > 
+                <Stack.Screen name="Intro" component={IntroScreen} />
+                <Stack.Screen name="Login" component={Login} />
+                <Stack.Screen name="Forgot" component={ForgotAccount} />
+                <Stack.Screen name="NewAccount" component={NewAccount} />
+                <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
+            </Stack.Navigator>
       </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
+
       // Containers
       pageBackground: {
         flex: 1,
       }, 
+
       imageBackground: {
         flex:1,
         justifyContent: "center",
       },
+
       imageContainer: {
         justifyContent: "center",
-        // backgroundColor: "red",
         marginVertical: 100,
         marginHorizontal: 50,
         position: 'relative',
         top: 60,
       },
+
       textContainer: {
         justifyContent: 'center',
         flexDirection: 'row',
         paddingVertical: 50,
         marginVertical: 90,
-        // backgroundColor: 'green',
       },
-
-      loadingImage: {
-
-      },
+      
       headerText: {
         fontSize: 25,
         color: 'white',

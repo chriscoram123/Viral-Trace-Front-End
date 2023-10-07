@@ -2,15 +2,15 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-// Components 
+// /login Components 
 import Header from '../components/forgot_components/header';
 import InputFields from '../components/forgot_components/inputFields';
 
-// Stack Navigation Imports
+// Imports for Stack Navigation
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 
-// Stack Navigation Screens
+// Screens for Stack Navigation
 import LoadingScreen from '../login_system/loading_screen';
 import NeedHelpLoading from '../login_system/loading_screen_copy';
 
@@ -22,13 +22,13 @@ export default function ForgotAccount({ navigation: { navigate } }) {
                 colors={['#1D2443','#38428B']}
                 style={styles.pageBackground}
             >
-                {/* Header Component */}
+                {/* Component for Header Content */}
                 <Header></Header>
 
-                {/* Input Field Component */}
+                {/* Component for Input Field Content */}
                 <InputFields></InputFields>
 
-                {/* User Options Component */}
+                {/* Component for User Options */}
                 <View style={styles.loginButtonsContainer}>
                     <View style={styles.cancelCon}>
                             <Button
@@ -47,7 +47,7 @@ export default function ForgotAccount({ navigation: { navigate } }) {
                     </View>
                 </View>
 
-                {/* Footer Content Component */}
+                {/* Component for Footer Content */}
                 <View style={styles.footerCon}>
                     <View style={styles.footerTextCon}>
                         <Text style={styles.footerText}> Still having trouble? Get in touch with our customer </Text>
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
             flex: 1,
         },
 
-        // Footer CSS
+        // CSS for Footer Content
         footerTextCon: {
             alignSelf: 'center',
             marginVertical: 10,
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
             borderRadius: 20,
         },
 
-        // User Options CSS
+        // CSS for User Options
         loginButtonsContainer: {
             justifyContent: 'center',
             flexDirection: 'row',
