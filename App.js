@@ -20,10 +20,11 @@ import SocialLogin from './components/login_components/socialLogin';
 
 export default function Login({ navigation: { navigate } }) {
 
-      // Animation Sequence
+      // Variable for a fade-in animation"
       const fadeAnim = useRef(new Animated.Value(0)).current;
       const fadeInAnim = useRef(new Animated.Value(0)).current;
 
+      // Animation Sequence 
       const fadeInOut = () => {
         Animated.sequence([
             Animated.timing(fadeAnim, {
@@ -38,7 +39,8 @@ export default function Login({ navigation: { navigate } }) {
             }),
         ]).start(() => fadeInOut());
       };
-  
+
+      // Animation Sequence 
       const fadeIn = () => {
         Animated.sequence([
           Animated.timing(fadeInAnim, {
@@ -57,47 +59,33 @@ export default function Login({ navigation: { navigate } }) {
   return (
     // <Animated.View style={{ opacity: fadeInAnim}}>
       <View style={styles.pageBackground}>
-        <ImageBackground
-          style={styles.imageBackground}
-          source={require('./assets/pexels-neo-2653362.jpg')}
-        >
-          <LinearGradient
-            colors={['rgba(0,0,0,0)','#38428B']}
-            style={styles.pageBackground}
-          >
+
+        <ImageBackground style={styles.imageBackground} source={require('./assets/pexels-neo-2653362.jpg')}>
+
+          <LinearGradient colors={['rgba(0,0,0,0)','#38428B']} style={styles.pageBackground}>
+
             {/* Header */}
             <Header></Header>
 
             {/* Input Fields */}
             <InputFields></InputFields>
 
-            {/* Login Options */}
+            {/* Container for Login Elements */}
             <View style={styles.loginButtonsContainer}>
+
                 <Animated.View style={{ opacity: fadeAnim }}>
                   <View style={styles.loginCon}>
-                      <Button 
-                        title="Login"
-                        color='white'
-                        onPress={() => navigate('LoadingScreen')}
-                      />
+                      <Button title="Login" color='white' onPress={() => navigate('LoadingScreen')} />
                   </View>
                 </Animated.View>
                 
                 <View style={styles.supportContainer}>
                   <View style={styles.forgotLink}>
-                    <Button 
-                      title="Forgot?"
-                      onPress={() => navigate('Forgot')
-                      }
-                    />
+                    <Button title="Forgot?" onPress={() => navigate('Forgot')} />
                   </View>
 
                   <View style={styles.newUserLink}>
-                    <Button 
-                      title="New User?"
-                      onPress={() => navigate('NewAccount')
-                      }
-                    />
+                    <Button title="New User?" onPress={() => navigate('NewAccount')} />
                   </View>
                 </View>
             </View>
@@ -108,7 +96,6 @@ export default function Login({ navigation: { navigate } }) {
           </LinearGradient>
         </ImageBackground>
       </View>
-    // </Animated.View>
   )
 }
 
@@ -116,10 +103,9 @@ const Stack = createNativeStackNavigator();
 
 function LoginStack() {
   return(
+      // Enable user-friendly screen navigation with the ability to swipe through content
       <NavigationContainer>
-          <Stack.Navigator
-              screenOptions={{headerShown: false}}
-          > 
+          <Stack.Navigator screenOptions={{headerShown: false}}> 
               <Stack.Screen name="Login" component={Login} />
               <Stack.Screen name="Forgot" component={ForgotAccount} />
               <Stack.Screen name="NewAccount" component={NewAccount} />
@@ -163,6 +149,3 @@ const styles = StyleSheet.create({
       marginHorizontal: 20,
   },
 });
-
-
-// export default LoginStack;
