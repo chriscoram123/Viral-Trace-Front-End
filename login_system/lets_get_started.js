@@ -94,33 +94,33 @@ export default function IntroStack() {
 const styles = StyleSheet.create({
 
       // Containers
-      imageContainer: {
-        justifyContent: "center",
-        marginVertical: 100,
-        marginHorizontal: 50,
-        position: 'relative',
-        top: 60,
-      },
-      textContainer: {
-        justifyContent: 'center',
-        flexDirection: 'row',
-        paddingVertical: 50,
-        marginVertical: 90,
-      },
+        imageContainer: {
+            justifyContent: "center",
+            marginVertical: 100,
+            marginHorizontal: 50,
+            position: 'relative',
+            top: 60,
+        },
+        textContainer: {
+            justifyContent: 'center',
+            flexDirection: 'row',
+            paddingVertical: 50,
+            marginVertical: 90,
+        },
       
       // Background CSS
-      pageBackground: {
-        flex: 1,
-      }, 
-      imageBackground: {
-        flex:1,
-        justifyContent: "center",
-      },
+        pageBackground: {
+            flex: 1,
+        }, 
+        imageBackground: {
+            flex:1,
+            justifyContent: "center",
+        },
       
-      // Font CSS
-      headerText: {
-        fontSize: 25,
-        color: 'white',
-        letterSpacing: 2.4,
-      }
+      // Text CSS
+        headerText: {
+            fontSize: 25,
+            color: 'white',
+            letterSpacing: 2.4,
+        }
 });

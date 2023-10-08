@@ -1,9 +1,7 @@
 import React, { useRef, useEffect,} from 'react';
 import { StyleSheet, Text, View, Image, Animated, ImageBackground } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-
-
-// Animation function will go here 
+  
 
 export default function LoadingScreen() {
 

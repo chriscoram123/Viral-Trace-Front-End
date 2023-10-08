@@ -85,47 +85,48 @@ export function ForgotStack() {
 }
 
 const styles = StyleSheet.create({
-        pageBackground: {
-            flex: 1,
-        },
+        // Background CSS
+            pageBackground: {
+                flex: 1,
+            },
 
         // CSS for Footer Content
-        footerTextCon: {
-            alignSelf: 'center',
-            marginVertical: 10,
-        },
-        footerText: {
-            color: 'white',
-            paddingVertical: 5,
-            alignSelf: 'center',
-        },
-        needHelpCon: {
-            backgroundColor: "#4D5C98",
-            marginHorizontal: 130,
-            marginVertical: 35,
-            height: 40,
-            borderRadius: 20,
-        },
+            footerTextCon: {
+                alignSelf: 'center',
+                marginVertical: 10,
+            },
+            footerText: {
+                color: 'white',
+                paddingVertical: 5,
+                alignSelf: 'center',
+            },
+            needHelpCon: {
+                backgroundColor: "#4D5C98",
+                marginHorizontal: 130,
+                marginVertical: 35,
+                height: 40,
+                borderRadius: 20,
+            },
 
         // CSS for User Options
-        loginButtonsContainer: {
-            justifyContent: 'center',
-            flexDirection: 'row',
-            marginVertical: 40,
-        },
-        cancelCon: {
-            backgroundColor: "#4D5C98",
-            marginHorizontal: 30,
-            paddingHorizontal: 10,
-            maxHeight: 40,
-            maxWidth: 100,
-            borderRadius: 20,
-        },
-        submitCon: {
-            backgroundColor: "#4D5C98",
-            marginHorizontal: 30,
-            maxHeight: 40,
-            borderRadius: 20,
-            paddingHorizontal: 10,
-        },
+            loginButtonsContainer: {
+                justifyContent: 'center',
+                flexDirection: 'row',
+                marginVertical: 40,
+            },
+            cancelCon: {
+                backgroundColor: "#4D5C98",
+                marginHorizontal: 30,
+                paddingHorizontal: 10,
+                maxHeight: 40,
+                maxWidth: 100,
+                borderRadius: 20,
+            },
+            submitCon: {
+                backgroundColor: "#4D5C98",
+                marginHorizontal: 30,
+                maxHeight: 40,
+                borderRadius: 20,
+                paddingHorizontal: 10,
+            },
 });

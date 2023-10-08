@@ -24,26 +24,26 @@ export default function NeedHelpLoading() {
 
 const styles = StyleSheet.create({
       // Background CSS
-      pageBackground: {
-        flex: 1,
-      },  
+        pageBackground: {
+          flex: 1,
+        },  
 
       // Containers
-      imageContainer: {
-        justifyContent: "center",
-        marginVertical: 150,
-        marginHorizontal: 50,
-      },
-      textContainer: {
-        justifyContent: 'center',
-        flexDirection: 'row',
-        paddingVertical: 20,
-      },
+        imageContainer: {
+          justifyContent: "center",
+          marginVertical: 150,
+          marginHorizontal: 50,
+        },
+        textContainer: {
+          justifyContent: 'center',
+          flexDirection: 'row',
+          paddingVertical: 20,
+        },
 
       // Font CSS
-      headerText: {
-        fontSize: 25,
-        color: 'white',
-        letterSpacing: 2.4,
-      }
+        headerText: {
+          fontSize: 25,
+          color: 'white',
+          letterSpacing: 2.4,
+        }
 });

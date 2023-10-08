@@ -127,25 +127,25 @@ const styles = StyleSheet.create({
 
 
   // Login Options CSS
-  loginButtonsContainer: {
-    marginTop: 50,
-    marginBottom: 30,
-  },
-  loginCon: {
-      backgroundColor: "#4D5C98",
-      marginHorizontal: 130,
-      height: 40,
-      borderRadius: 20,
-  },
-  supportContainer: {
-      flexDirection: "row",
-      justifyContent: "center",
-      marginVertical: 15,
-  },
-  forgotLink: {
-      marginHorizontal: 35,
-  },
-  newUserLink: {
-      marginHorizontal: 20,
-  },
+    loginButtonsContainer: {
+      marginTop: 50,
+      marginBottom: 30,
+    },
+    loginCon: {
+        backgroundColor: "#4D5C98",
+        marginHorizontal: 130,
+        height: 40,
+        borderRadius: 20,
+    },
+    supportContainer: {
+        flexDirection: "row",
+        justifyContent: "center",
+        marginVertical: 15,
+    },
+    forgotLink: {
+        marginHorizontal: 35,
+    },
+    newUserLink: {
+        marginHorizontal: 20,
+    },
 });

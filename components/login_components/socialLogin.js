@@ -58,38 +58,30 @@ export default function SocialLogin () {
 // }
 
 const style = StyleSheet.create({
-    footerText: {
-        fontSize: 18,
-        color: 'white',
-        textAlign: "center",      
-        letterSpacing: 2,
-    },
-    socialButtonsContainer: {
-        marginVertical: 20,
-        // marginHorizontal: 10,
-        flexDirection: 'row',
-        justifyContent: 'center',
-    },
-    googleLinkContainer: {
-        marginVertical: 10,
-        marginHorizontal: 40,
-        // backgroundColor: "#4D5C98",
-        height: 60,
-        maxWidth: 100,
-        // borderRadius: 20,
-    },
-    facebookLinkContainer: {
-        marginVertical: 10,
-        marginHorizontal: 40,
-        // backgroundColor: "#4D5C98",
-        height: 60,
-        maxWidth: 100,
-        // borderRadius: 100,
-    },
-    footerText: {
-        fontSize: 18,
-        color: 'white',
-        textAlign: "center",      
-        letterSpacing: 2,
-      },
+    // Containers
+        socialButtonsContainer: {
+            marginVertical: 20,
+            flexDirection: 'row',
+            justifyContent: 'center',
+        },
+        googleLinkContainer: {
+            marginVertical: 10,
+            marginHorizontal: 40,
+            height: 60,
+            maxWidth: 100,
+        },
+        facebookLinkContainer: {
+            marginVertical: 10,
+            marginHorizontal: 40,
+            height: 60,
+            maxWidth: 100,
+        },
+        
+    // Text CSS
+        footerText: {
+            fontSize: 18,
+            color: 'white',
+            textAlign: "center",      
+            letterSpacing: 2,
+        },
 })
