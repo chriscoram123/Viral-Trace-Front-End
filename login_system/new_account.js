@@ -2,11 +2,11 @@ import React, { useRef, useEffect, useState} from 'react';
 import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-// Stack Navigation Imports
+// Imports for Stack Navigation
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 
-// Stack Navigation Screens
+// Imports for Stack Navigation Screens
 import LoadingScreen from '../login_system/loading_screen';
 
 export default function NewAccount({ navigation: { navigate } }) {
@@ -44,14 +44,11 @@ export default function NewAccount({ navigation: { navigate } }) {
                             placeholder={'Username'}
                         />
                             <View style={styles.imgContainer}>
-                                <Image
-                                    source={require('../assets/DividerLine.png')}
-                                    style={styles.dividerLine}
-                                />
+                                <Image source={require('../assets/DividerLine.png')} style={styles.dividerLine}/>
                             </View>
                     </View>
 
-                    {/* First Name */}
+                    {/* First Name Field */}
                     <View style={styles.firstNameField}>
                         <Text style={styles.firstNameTitle}>First Name</Text>
                         <TextInput 
@@ -61,14 +58,11 @@ export default function NewAccount({ navigation: { navigate } }) {
                             placeholder={'First Name'}
                         />
                             <View style={styles.imgContainer}>
-                                <Image
-                                    source={require('../assets/DividerLine.png')}
-                                    style={styles.dividerLine}
-                                />
+                                <Image source={require('../assets/DividerLine.png')} style={styles.dividerLine}/>
                             </View>
                     </View>
 
-                    {/* Last Name */}
+                    {/* Last Name Field */}
                     <View style={styles.lastNameField}>
                         <Text style={styles.lastNameTitle}>Last Name</Text>
                         <TextInput 
@@ -78,14 +72,11 @@ export default function NewAccount({ navigation: { navigate } }) {
                             placeholder={'Last Name'}
                         />
                             <View style={styles.imgContainer}>
-                                <Image
-                                    source={require('../assets/DividerLine.png')}
-                                    style={styles.dividerLine}
-                                />
+                                <Image source={require('../assets/DividerLine.png')} style={styles.dividerLine}/>
                             </View>
                     </View>
 
-                    {/* Phone Number */}
+                    {/* Phone Number Field */}
                     <View style={styles.phoneNumberField}>
                         <Text style={styles.phoneNumberTitle}>Phone Number</Text>
                         <TextInput 
@@ -96,14 +87,11 @@ export default function NewAccount({ navigation: { navigate } }) {
                             keyboardType={"phone-pad"}
                         />
                             <View style={styles.imgContainer}>
-                                <Image
-                                    source={require('../assets/DividerLine.png')}
-                                    style={styles.dividerLine}
-                                />
+                                <Image source={require('../assets/DividerLine.png')} style={styles.dividerLine}/>
                             </View>
                     </View>
 
-                    {/* Password */}
+                    {/* Password Field */}
                     <View style={styles.passwordField}>
                         <Text style={styles.passwordTitle}>Password</Text>
                         <TextInput 
@@ -113,14 +101,11 @@ export default function NewAccount({ navigation: { navigate } }) {
                             placeholder={'Password'}
                         />
                             <View style={styles.imgContainer}>
-                                <Image
-                                    source={require('../assets/DividerLine.png')}
-                                    style={styles.dividerLine}
-                                />
+                                <Image source={require('../assets/DividerLine.png')} style={styles.dividerLine}/>
                             </View>
                     </View>
 
-                    {/* Confirm Password */}
+                    {/* Confirm Password Field */}
                     <View style={styles.confirmPasswordField}>
                         <Text style={styles.confirmPasswordTitle}>Confirm Password</Text>
                         <TextInput 
@@ -130,10 +115,7 @@ export default function NewAccount({ navigation: { navigate } }) {
                             placeholder={'Confirm Password'}
                         />
                             <View style={styles.imgContainer}>
-                                <Image
-                                    source={require('../assets/DividerLine.png')}
-                                    style={styles.dividerLine}
-                                />
+                                <Image source={require('../assets/DividerLine.png')} style={styles.dividerLine}/>
                             </View>
                     </View>
                 </View>
@@ -145,7 +127,6 @@ export default function NewAccount({ navigation: { navigate } }) {
                         <Button 
                             title="Cancel"
                             color='white'
-                            // onPress={() => navigate('ForgotAccount')}
                         />
                     </View>
 
@@ -191,10 +172,6 @@ const styles = StyleSheet.create({
             marginTop: 80,
             marginBottom: 20,
             alignSelf: 'center',
-            // backgroundColor: 'green',
-        },
-        inputContainer: {
-            // backgroundColor: "red",
         },
         userNameField: {
             marginVertical: 15,
