@@ -8,38 +8,10 @@ import ForgotAccount from '../login_system/forgot_account.js';
 import LoadingScreen from '../login_system/loading_screen';
 import NewAccount from '../login_system/new_account';
 
-// function Stack() {
-//     return(
-//         <Tab.Navigator
-//             name="LoginPage"
-//             screenOptions={{headerShown: false}}
-//         >
-//             <Tab.Screen 
-//                 name="LoginPage"
-//                 component={App}
-//                 options={{ title: 'Login Page' }}
-//             />
-//             <Tab.Screen 
-//                 name="ForgotAccount"
-//                 component={ForgotAccount}
-//                 options={{ title: 'Forgot Account' }}
-//             />
-//             <Tab.Screen 
-//                 name="LoadingScreen"
-//                 component={LoadingScreen}
-//                 options={{ title: 'Loading Screen' }}
-//             />
-//             <Tab.Screen 
-//                 name="NewAccount"
-//                 component={NewAccount}
-//                 options={{ title: 'New Account' }}
-//             />
-//         </Tab.Navigator>
-//     );
-// }
 
 function LoginStack() {
     return(
+        // Enable user-friendly screen navigation with the ability to swipe through content
         <NavigationContainer>
             <Stack.Navigator
                 screenOptions={{headerShown: false}}

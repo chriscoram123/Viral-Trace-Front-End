@@ -6,44 +6,45 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 
 export default function LoginOption(navigation) {
+
+  // Declared Variables
   const [login, setLogin] = useState('');
   
-    return (
-        <View style={styles.loginButtonsContainer}>
-            <View style={styles.loginCon}>
-                <Button 
-                  title="Login"
-                  color='white'
-                  // onPress={() => navigation.navigate()
-                />
-            </View>
-            
-            <View style={styles.supportContainer}>
-              <View style={styles.forgotLink}>
-                <Button 
-                  title="Forgot?"
-                  onPress={() => navigation.navigate(ForgotAccount)
-                  }
-                />
-              </View>
-
-              <View style={styles.newUserLink}>
-                <Button 
-                  title="New User?"
-                  onPress={() => navigation.navigate(NewAccount)
-                  }
-                />
-              </View>
+  return (
+      <View style={styles.loginButtonsContainer}>
+          <View style={styles.loginCon}>
+              <Button 
+                title="Login"
+                color='white'
+              />
+          </View>
+          
+          <View style={styles.supportContainer}>
+            <View style={styles.forgotLink}>
+              <Button 
+                title="Forgot?"
+                onPress={() => navigation.navigate(ForgotAccount)
+                }
+              />
             </View>
 
-        </View>
-    )
+            <View style={styles.newUserLink}>
+              <Button 
+                title="New User?"
+                onPress={() => navigation.navigate(NewAccount)
+                }
+              />
+            </View>
+          </View>
+      </View>
+  )
 }
 
 const Stack = createNativeStackNavigator();
 
 function LoginStack() {
   return(
+      // Enable user-friendly screen navigation with the ability to swipe through content
       <NavigationContainer>
           <Stack.Navigator
               screenOptions={{headerShown: false}}
