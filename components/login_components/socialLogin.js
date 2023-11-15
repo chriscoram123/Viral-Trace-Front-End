@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Modal, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, Modal, TouchableOpacity, Pressable, Button} from 'react-native';
 
 export default function SocialLogin () {
     
@@ -11,20 +11,34 @@ export default function SocialLogin () {
       setIsModalVisible(!isModalVisible);
     };
 
+    const [visible, setVisible] = useState(false);
+    const show = () => setVisible(true);
+    const hide = () => setVisible(false);
+
     return(
         <>
         <Text style={style.footerText}>Also Login With</Text>
-
+            
+            {/* Error: Pressing on icons disrupts expo's ability to render the application */}
             <View style={style.socialButtonsContainer}>
                 <View style={style.googleLinkContainer}>
-                    <TouchableOpacity onPress={toggleModal}>
-                        <Image 
-                            source={require('../../assets/GoogleBtn.png')} />
+                    <TouchableOpacity onPress={show}>
+                        <Image source={require('../../assets/GoogleBtn.png')} />
                     </TouchableOpacity>
+                    <Modal 
+                        visible={visible}
+                        // onRequestClose={hide}
+                        animationType="fade"
+                    >
+                        <Pressable style={style.closeCon} onPress={hide} />
+                            <View style={style.close}>
+                                <Button color="black" title="Hide" onPress={hide} />
+                            </View>
+                    </Modal>
                 </View>
 
                 <View  style={style.facebookLinkContainer}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={show}>
                         <Image source={require('../../assets/FacebookBtn.png')} />
                     </TouchableOpacity>
                 </View>
