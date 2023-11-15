@@ -2,6 +2,8 @@ import React, { useRef, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, ImageBackground, Button, Animated } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { Viewport } from '@skele/components';
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
 // Stack Navigation Imports
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -17,6 +19,9 @@ import InputFields from './components/login_components/loginInputFields';
 import Header from './components/login_components/header';
 import LoginOptions from './components/login_components/loginOptions';
 import SocialLogin from './components/login_components/socialLogin';
+
+
+// const ViewportAwareImage = Viewport.Aware(Image)
 
 export default function Login({ navigation: { navigate } }) {
 
@@ -57,7 +62,7 @@ export default function Login({ navigation: { navigate } }) {
 
       
   return (
-    // <Animated.View style={{ opacity: fadeInAnim}}>
+    // <Viewport.Tracker>
       <View style={styles.pageBackground}>
 
         <ImageBackground style={styles.imageBackground} source={require('./assets/pexels-neo-2653362.jpg')}>
@@ -96,6 +101,7 @@ export default function Login({ navigation: { navigate } }) {
           </LinearGradient>
         </ImageBackground>
       </View>
+    // </Viewport.Tracker>
   )
 }
 
@@ -128,7 +134,7 @@ const styles = StyleSheet.create({
 
   // Login Options CSS
     loginButtonsContainer: {
-      marginTop: 50,
+      marginTop: verticalScale(50),
       marginBottom: 30,
     },
     loginCon: {
